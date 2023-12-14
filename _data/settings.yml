@@ -11,7 +11,7 @@ author:
   name: Alex Rodriguez
   image: 01.jpg
   say-hello: Hello, I’m <strong>Choyeon An</strong>
-  bio: I’m an ambitious and focused data scientist. I’ve worked on big data system projects for 4 years mostly in the banking industry. Up till now, I have concentrated on utilising Python and SQL to enhance IT process systems through data science methods. My skillset includes <strong>Data Analysis</strong>, <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, and NLP. I’m interested in learning more about NLP techniques these days. Loves <a href="#">music</a> & riding his bicycle.
+  bio: I’m an ambitious and focused data scientist. I’ve worked on big data system projects for 4 years mostly in the banking industry. Up till now, I have concentrated on utilising Python and SQL to enhance IT process systems through data science methods. My skillset includes <strong>Data Analysis</strong>, <strong>Machine Learning</strong>, <strong>Deep Learning</strong>, and <strong><a href="#">NLP</a></strong>. I’m interested in learning more about NLP techniques these days. Loves <a href="#">music</a> & riding his bicycle.
 
 
 #-------------------------------
