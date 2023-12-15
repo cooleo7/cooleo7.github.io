@@ -5,15 +5,16 @@ date: 2022-01-24 15:01:35 +0300
 image:  02.avif
 tags:   
 ---
-We can identify which customers are likely to leave the bank from this type of data. It is crucial that banks conduct more thorough data analysis. The purpose of this project is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
+We can identify which customers are likely to leave the bank through various ML & DL methods. It is crucial that banks conduct more thorough data analysis. The purpose of this project is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
 
+The goal of this project is finding out the accuracy of prediction depending on the condition in experiments. The project will be consist of 3 parts:
+* EDA (Explatory Data Analysis)
+* Method explanation
+* Result
 
-## Data 
+## EDA - Data preprocessing 
 ![]({{ site.baseurl }}/images/11.png)
 *Data Structure*
-
-
-## EDA - Data preprocessing
 
 1. Data encoding
    
@@ -39,9 +40,13 @@ We can identify which customers are likely to leave the bank from this type of d
    ![]({{ site.baseurl }}/images/15.png)
 
    
-## Why not indeed!
+## The concept of algorithm
 
-Nay, I respect and admire Harold Zoid too much to beat him to death with his own Oscar. I don't 'need' to drink. I can quit anytime I want! Soothe us with sweet lies. Bender?! You stole the atom. You don't know how to do any of those.
+I tried separating train data and test data with 5-Fold cross validation to prevent the interruption from biased data and increase the accuracy of a model.
+Below is a classification of regression as a special case.
+![]({{ site.baseurl }}/images/16.png)
+![]({{ site.baseurl }}/images/17.png)
+
 
 * Shinier than yours, meatbag.
 * This is the worst part. The calm before the battle.
