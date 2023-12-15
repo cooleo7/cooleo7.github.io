@@ -1,22 +1,26 @@
 ---
 layout: post
 title:  The prediction churn of bank customers with Binomial Logistic Regression
-%date:   2018-07-24 15:01:35 +0300
 date:
 image:  02.avif
 tags:   Resources
 ---
-Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." Noooooo! Perhaps, but perhaps your civilization is merely the sewer of an even greater society above you!
+## Data 
+We can identify which customers are likely to leave the bank from this type of data. It is crucial that banks conduct more thorough data analysis. The purpose of this report is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
+![]({{ site.baseurl }}/images/11.png)
+*Data Structure*
 
-You lived before you met me?! Ow, my spirit! Humans dating robots is sick. __You people wonder why I'm still single?__ *It's 'cause all the fine robot sisters are dating humans!* I guess if you want children beaten, you have to do it yourself.
+## EDA - Data preprocessing
 
-## Are you crazy? I can't swallow that.
-
-Oh, I don't have time for this. I have to go and buy a single piece of fruit with a coupon and then return it, making people wait behind me while I complain. Meh. So, how 'bout them Knicks? Also Zoidberg.
-
-1. We need rest. The spirit is willing, but the flesh is spongy and bruised.
-2. Fry, we have a crate to deliver.
-3. Have you ever tried just turning off the TV, sitting down with your children, and hitting them?
+1. Data encoding
+   Some variables are categorical, so I converted them to binary values. To apply cat- egorization issues, this is crucial (for instance, nation and
+   gender). I consequently developed new features like country GE, country FR, country SP, and gender M and gender F.
+2. Data scaling
+   I used log transformation and standardisation to change the features’ scale.
+3. Data Correlation
+   As illustrated in Figure 1 below, I discovered that age, country GE, balance, and active member have better correlations with churn than other factors.
+   I chose these four features as the main features as a result.
+   
 
 ### Why not indeed!
 
