@@ -5,8 +5,9 @@ date:
 image:  02.avif
 tags:   Resources
 ---
+We can identify which customers are likely to leave the bank from this type of data. It is crucial that banks conduct more thorough data analysis. The purpose of this project is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
+
 ## Data 
-We can identify which customers are likely to leave the bank from this type of data. It is crucial that banks conduct more thorough data analysis. The purpose of this report is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
 ![]({{ site.baseurl }}/images/11.png)
 *Data Structure*
 
