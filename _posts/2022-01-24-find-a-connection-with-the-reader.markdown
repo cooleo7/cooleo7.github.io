@@ -10,6 +10,7 @@ We can identify which customers are likely to leave the bank through various ML 
 The goal of this project is finding out the accuracy of prediction depending on the condition in experiments. The project will be consist of 3 parts:
 * EDA (Explatory Data Analysis)
 * Method explanation
+* The condition in experiment
 * Result
 
 ## EDA - Data preprocessing 
@@ -48,9 +49,9 @@ Below is a classification of regression as a special case.
 ![]({{ site.baseurl }}/images/17.png)
 
 
-* Shinier than yours, meatbag.
-* This is the worst part. The calm before the battle.
-* Ooh, name it after me!
+## Conditions in experiment
+I tried to apply each case below to the model.
+![]({{ site.baseurl }}/images/18.png)
 
 Say what? Throw her in the brig. Hey, you add a one and two zeros to that or we walk! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Ow, my spirit! Who's brave enough to fly into something we all keep calling a death sphere?
 
