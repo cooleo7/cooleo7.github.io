@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The prediction churn of bank customers with Binomial Logistic Regression
-date:
+date: 2022-01-24 15:01:35 +0300
 image:  02.avif
 tags:   Resources
 ---
