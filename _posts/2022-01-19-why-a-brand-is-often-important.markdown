@@ -49,6 +49,21 @@ I attempted to test the PCA and LGBM because I’m unsure if the feature selecti
 2. LGBM
 
    I tried to run plot importance provided by lightgbm library. Exceptionally, credit score was important feature as shown below. Despite using all features as input, the accu- racy is substantially higher than that of binary logistic regression and KNN.
+\begin{table}[h]
+\caption{The confusion matrix of the LGBM}
+\begin{center}
+\begin{tabular}{clclclc}
+\hline
+         & accuracy  & precision  & recall   \\
+\hline
+All features  & 0.8605 & 0.7552 & 0.5129   \\
+\hline
+main features  & 0.8250 & 0.7127 & 0.3021   \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\begin{figure}[h]
 ![]({{ site.baseurl }}/images/23.png)
 ![]({{ site.baseurl }}/images/24.png)
    
