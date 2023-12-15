@@ -31,10 +31,15 @@ We can identify which customers are likely to leave the bank from this type of d
    As illustrated in Figure 1 below, I discovered that age, country GE, balance, and active member have better correlations with churn than other factors.
    I chose these four features as the main features as a result.
    ![]({{ site.baseurl }}/images/14.png)
+   *Figure 1 heatmap : correlation between features*
+
+4. Data Drop & replacement
+   
+   Since age contains certain outliers, as shown in (a) below, I tried to remove them and also did so for only churn=1. As can be seen in (b) below, there    are a lot of 0 values. I replaced these 0 values with a mean of balance.
+   ![]({{ site.baseurl }}/images/15.png)
 
    
-
-### Why not indeed!
+## Why not indeed!
 
 Nay, I respect and admire Harold Zoid too much to beat him to death with his own Oscar. I don't 'need' to drink. I can quit anytime I want! Soothe us with sweet lies. Bender?! You stole the atom. You don't know how to do any of those.
 
