@@ -7,7 +7,7 @@ tags:
 ---
 We can identify which customers are likely to leave the bank through various ML & DL methods. It is crucial that banks conduct more thorough data analysis. The purpose of this project is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
 
-The goal of this project is finding out the accuracy of prediction depending on the condition in experiments. The project will be consist of 3 parts:
+The goal of this project is finding out the accuracy of prediction depending on the condition in experiments. The project will be consist of 4 parts:
 * EDA (Explatory Data Analysis)
 * Method explanation
 * The condition in experiment
