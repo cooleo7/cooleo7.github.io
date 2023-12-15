@@ -2,7 +2,7 @@
 layout: post
 title:  Why a brand is often important
 date:   2022-01-19 15:01:35 +0300
-image:  03.jpg
+image:  03.webp
 tags:   Style
 ---
 Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." Noooooo! Perhaps, but perhaps your civilization is merely the sewer of an even greater society above you!
