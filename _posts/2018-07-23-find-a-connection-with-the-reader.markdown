@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Find a connection with the reader
+title:  The prediction churn of  bank customers with Binomial Logistic Regression
 date:   2018-07-24 15:01:35 +0300
 image:  02.jpg
 tags:   Resources
