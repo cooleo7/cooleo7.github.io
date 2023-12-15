@@ -13,6 +13,7 @@ The project will be consist of 3 parts:
 * The condition in experiment
 * Result
 * Conclusion
+* PCA & LGBM
 
 
 ## The concept of algorithm
@@ -23,47 +24,31 @@ step 3. Match the element in Train label which the index is same : [1,0,1,0,0,0,
 From [1,0,1,0,0,0,0], I calculated the probability of the occurrence of 0 and 1. The probability of the occurrence of 0 is assigned to 0th index and the probability of the occurrence of 1 is assigned to 1st index as [$\frac{5}{7}$, $\frac{2}{7}$]. Since $\frac{5}{7}$ > $\frac{2}{7}$, Test data 1 is classified to label 0 in this example.
 
 
-Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." Noooooo! Perhaps, but perhaps your civilization is merely the sewer of an even greater society above you!
+## Conditions in experiment
+I tried to apply each case below to the model. 
+![]({{ site.baseurl }}/images/18.png)
 
-You lived before you met me?! Ow, my spirit! Humans dating robots is sick. __You people wonder why I'm still single?__ *It's 'cause all the fine robot sisters are dating humans!* I guess if you want children beaten, you have to do it yourself.
 
-## Are you crazy? I can't swallow that.
+## Result
+It’s interesting to see that KNN with log-transformed features outperforms Binomial Logistic Regression with log-transformed features. I carefully surmise that the fact that the algorithm’s foundation is based on distance is the reason why the outcome in case 9 is the best. In case 9, the extremely skewed balance is log converted, and the age outliers are completely eliminated. This demonstrates that log transformation works well with skewed data.
+![]({{ site.baseurl }}/images/22.png)
 
-Oh, I don't have time for this. I have to go and buy a single piece of fruit with a coupon and then return it, making people wait behind me while I complain. Meh. So, how 'bout them Knicks? Also Zoidberg.
 
-1. We need rest. The spirit is willing, but the flesh is spongy and bruised.
-2. Fry, we have a crate to deliver.
-3. Have you ever tried just turning off the TV, sitting down with your children, and hitting them?
+## Conclusion
+There is basically no performance difference between the two methods in this Bank data. The more productive method of modeling is the selection and manipulation of features. With the dimension reduction and the features standardised, binomial logistic regression performed well. But when the main features were log-transformed, KNN performed better.
+The two algorithms’ different performance levels were a result of the two different approaches to data transformation, standardisation and log transformation. This study taught me that the algorithm utilised is not as important as how effectively the data qualities are understood and altered, such as by reducing dimensions and altering features.
 
-### Why not indeed!
 
-Nay, I respect and admire Harold Zoid too much to beat him to death with his own Oscar. I don't 'need' to drink. I can quit anytime I want! Soothe us with sweet lies. Bender?! You stole the atom. You don't know how to do any of those.
+## PCA & LGBM
+I attempted to test the PCA and LGBM because I’m unsure if the feature selection for my model is functioning correctly or not. I tried to create two models and compare them to my model because LGBM is renowned as the highest-performing algorithm and PCA is helpful for dimension reduction.
 
-* Shinier than yours, meatbag.
-* This is the worst part. The calm before the battle.
-* Ooh, name it after me!
+1. PCA
+   
+   I made a two-dimensional PCA and applied it to KNN and binomial logistic regression. Unexpectedly, my feature selection outperforms the accuracy of two models when PCA is applied. (binomial logistic regression : 0.7963, KNN : 0.8147)
 
-Say what? Throw her in the brig. Hey, you add a one and two zeros to that or we walk! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Ow, my spirit! Who's brave enough to fly into something we all keep calling a death sphere?
+2. LGBM
 
-Hey, you add a one and two zeros to that or we walk! You won't have time for sleeping, soldier, not with all the bed making you'll be doing. It's okay, Bender. I like cooking too. Hey, what kinda party is this? There's no booze and only one hooker.
-
-![]({{ site.baseurl }}/images/07.jpg)
-*Minimalism*
-
-Ummm…to eBay? But I know you in the future. I cleaned your poop. I'm just glad my fat, ugly mama isn't alive to see this day. My fellow Earthicans, as I have explained in my book 'Earth in the Balance'', and the much more popular ''Harry Potter and the Balance of Earth', we need to defend our planet against pollution. Also dark wizards.
-
-Your best is an idiot! Fry, you can't just sit here in the dark listening to classical music. And remember, don't do anything that affects anything, unless it turns out you were supposed to, in which case, for the love of God, don't not do it!
-
-You, a bobsleder!? That I'd like to see! I'm Santa Claus! There's no part of that sentence I didn't like! Noooooo! I can explain. It's very valuable.
-
-I'm Santa Claus! Is the Space Pope reptilian!? Who's brave enough to fly into something we all keep calling a death sphere? I had more, but you go ahead.
-
-It doesn't look so shiny to me. Kif might! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Oh, but you can. But you may have to metaphorically make a deal with the devil. And by "devil", I mean Robot Devil. And by "metaphorically", I mean get your coat.
-
-Check it out, y'all. Everyone who was invited is here. Anyone who laughs is a communist! You're going to do his laundry? Michelle, I don't regret this, but I both rue and lament it.
-
-Bender, we're trying our best. I daresay that Fry has discovered the smelliest object in the known universe! Oh, you're a dollar naughtier than most. Hi, I'm a naughty nurse, and I really need someone to talk to. $9.95 a minute.
-
-You, a bobsleder!? That I'd like to see! No! The kind with looting and maybe starting a few fires! Good news, everyone! There's a report on TV with some very bad news! When I was first asked to make a film about my nephew, Hubert Farnsworth, I thought "Why should I?" Then later, Leela made the film. But if I did make it, you can bet there would have been more topless women on motorcycles. Roll film!
-
-Eeeee! Now say "nuclear wessels"! Why did you bring us here? Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." That's the ONLY thing about being a slave.
+   I tried to run plot importance provided by lightgbm library. Exceptionally, credit score was important feature as shown below. Despite using all features as input, the accu- racy is substantially higher than that of binary logistic regression and KNN.
+![]({{ site.baseurl }}/images/23.png)
+![]({{ site.baseurl }}/images/24.png)
+   
