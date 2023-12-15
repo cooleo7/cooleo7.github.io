@@ -2,7 +2,7 @@
 layout: post
 title:  The prediction churn of bank customers with Binomial Logistic Regression
 date: 2022-01-24 15:01:35 +0300
-image:  02.avif
+image:  02.png
 tags:   
 ---
 We can identify which customers are likely to leave the bank through various ML & DL methods. It is crucial that banks conduct more thorough data analysis. The purpose of this project is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
