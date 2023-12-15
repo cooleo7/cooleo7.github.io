@@ -7,9 +7,11 @@ tags:   Resources
 ---
 We can identify which customers are likely to leave the bank from this type of data. It is crucial that banks conduct more thorough data analysis. The purpose of this project is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
 
+
 ## Data 
 ![]({{ site.baseurl }}/images/11.png)
 *Data Structure*
+
 
 ## EDA - Data preprocessing
 
@@ -18,11 +20,18 @@ We can identify which customers are likely to leave the bank from this type of d
    Some variables are categorical, so I converted them to binary values. To apply cat- egorization issues, this is crucial (for instance, nation and
    gender). I consequently developed new features like country GE, country FR, country SP, and gender M and gender F.
    
-3. Data scaling
+2. Data scaling
+   
    I used log transformation and standardisation to change the features’ scale.
-4. Data Correlation
+   
+3. Relation between variables
+   ![]({{ site.baseurl }}/images/12.png)
+   ![]({{ site.baseurl }}/images/13.png)
+   
    As illustrated in Figure 1 below, I discovered that age, country GE, balance, and active member have better correlations with churn than other factors.
    I chose these four features as the main features as a result.
+   ![]({{ site.baseurl }}/images/14.png)
+
    
 
 ### Why not indeed!
