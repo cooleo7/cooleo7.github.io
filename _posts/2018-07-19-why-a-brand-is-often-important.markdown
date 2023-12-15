@@ -20,7 +20,7 @@ The project will be consist of 3 parts:
 step 1. Distance of Test data 1 : [4,3,2,1,0,9,10]
 step 2. Try to sort elements in order as index : [4,3,2,1,0,5,6], since 4th element is the smallest and the next is 3rd element. Other elements are applied as same logic.
 step 3. Match the element in Train label which the index is same : [1,0,1,0,0,0,0], since the 4th element of Train label is 1 and 3rd element of Train label is 0. Other elements are applied as same logic.
-From [1,0,1,0,0,0,0], I calculated the probability of the occurrence of 0 and 1. The probability of the occurrence of 0 is assigned to 0th index and the probability of the occurrence of 1 is assigned to 1st index as [₩frac{5}{7}, ₩frac{2}{7}]
+From [1,0,1,0,0,0,0], I calculated the probability of the occurrence of 0 and 1. The probability of the occurrence of 0 is assigned to 0th index and the probability of the occurrence of 1 is assigned to 1st index as [$\frac{5}{7}$, $\frac{2}{7}$]
 
 
 Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." Noooooo! Perhaps, but perhaps your civilization is merely the sewer of an even greater society above you!
