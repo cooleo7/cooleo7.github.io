@@ -14,11 +14,13 @@ We can identify which customers are likely to leave the bank from this type of d
 ## EDA - Data preprocessing
 
 1. Data encoding
+   
    Some variables are categorical, so I converted them to binary values. To apply cat- egorization issues, this is crucial (for instance, nation and
    gender). I consequently developed new features like country GE, country FR, country SP, and gender M and gender F.
-2. Data scaling
+   
+3. Data scaling
    I used log transformation and standardisation to change the features’ scale.
-3. Data Correlation
+4. Data Correlation
    As illustrated in Figure 1 below, I discovered that age, country GE, balance, and active member have better correlations with churn than other factors.
    I chose these four features as the main features as a result.
    
