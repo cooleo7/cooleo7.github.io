@@ -17,7 +17,7 @@ The project will be consist of 3 parts:
 
 
 ## The concept of algorithm
-![]({{ site.baseurl }}/images/21.png)
+<p align="center"><img src="{{ site.baseurl }}/images/21.png" width="100%" height="80%" title="px(픽셀) 크기 설정" alt="RubberDuck"></p>
 step 1. Distance of Test data 1 : [4,3,2,1,0,9,10]
 step 2. Try to sort elements in order as index : [4,3,2,1,0,5,6], since 4th element is the smallest and the next is 3rd element. Other elements are applied as same logic.
 step 3. Match the element in Train label which the index is same : [1,0,1,0,0,0,0], since the 4th element of Train label is 1 and 3rd element of Train label is 0. Other elements are applied as same logic.
@@ -50,7 +50,7 @@ I attempted to test the PCA and LGBM because I’m unsure if the feature selecti
 
    I tried to run plot importance provided by lightgbm library. Exceptionally, credit score was important feature as shown below. Despite using all features as input, the accu- racy is substantially higher than that of binary logistic regression and KNN.
    
-<p align="center"><img src="{{ site.baseurl }}/images/23.png" width="70%" height="40%" title="px(픽셀) 크기 설정" alt="RubberDuck"></p>
-<p align="center"><img src="{{ site.baseurl }}/images/24.png" width="110%" height="90%" title="px(픽셀) 크기 설정" alt="RubberDuck"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/23.png" width="70%" height="40%" alt="RubberDuck">
+<img src="{{ site.baseurl }}/images/24.png" width="110%" height="60%" alt="RubberDuck"></p>
 
    
