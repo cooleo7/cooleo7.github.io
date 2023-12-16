@@ -26,7 +26,7 @@ From [1,0,1,0,0,0,0], I calculated the probability of the occurrence of 0 and 1.
 
 ## Conditions in experiment
 I tried to apply each case below to the model. 
-![]({{ site.baseurl }}/images/18.png)
+<p align="center"><img src="{{ site.baseurl }}/images/18.png" width="100%" height="80%" title="px(픽셀) 크기 설정" alt="RubberDuck"></p>
 
 
 ## Result
@@ -50,7 +50,7 @@ I attempted to test the PCA and LGBM because I’m unsure if the feature selecti
 
    I tried to run plot importance provided by lightgbm library. Exceptionally, credit score was important feature as shown below. Despite using all features as input, the accu- racy is substantially higher than that of binary logistic regression and KNN.
    
-<img src="{{ site.baseurl }}/images/23.png" width="70%" height="40%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
-<img src="{{ site.baseurl }}/images/24.png" width="80%" height="90%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+<p align="center"><img src="{{ site.baseurl }}/images/23.png" width="70%" height="40%" title="px(픽셀) 크기 설정" alt="RubberDuck"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/24.png" width="110%" height="90%" title="px(픽셀) 크기 설정" alt="RubberDuck"></p>
 
    
