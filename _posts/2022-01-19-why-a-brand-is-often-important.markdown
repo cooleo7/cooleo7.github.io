@@ -8,7 +8,7 @@ tags:
 We can identify which customers are likely to leave the bank through various ML & DL methods. It is crucial that banks conduct more thorough data analysis. The purpose of this project is to learn something new through careful data analysis such as __KNN (K-Nearest Neigbours).__
 
 In the previous page, I experimented the bionomial losgistic regression. In this page, I exprimeted KNN with same dataset and the same conditions.
-The project will be consist of 3 parts:
+The project will be consist of 5 parts:
 * Method explanation
 * The condition in experiment
 * Result
