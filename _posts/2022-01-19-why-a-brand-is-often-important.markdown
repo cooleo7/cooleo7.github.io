@@ -51,6 +51,6 @@ I attempted to test the PCA and LGBM because I’m unsure if the feature selecti
    I tried to run plot importance provided by lightgbm library. Exceptionally, credit score was important feature as shown below. Despite using all features as input, the accu- racy is substantially higher than that of binary logistic regression and KNN.
    
 <img src="{{ site.baseurl }}/images/23.png" width="70%" height="40%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
-![]({{ site.baseurl }}/images/23.png)
-![]({{ site.baseurl }}/images/24.png)
+<img src="{{ site.baseurl }}/images/24.png" width="80%" height="90%" title="px(픽셀) 크기 설정" alt="RubberDuck"></img>
+
    
