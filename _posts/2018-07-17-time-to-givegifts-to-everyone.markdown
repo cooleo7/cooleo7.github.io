@@ -60,29 +60,29 @@ loan Status.
 
 ## Partial Data Analysis
    
-   1. Semiurban Data (Property Area=’Semiurban’)
+1. Semiurban Data (Property Area=’Semiurban’)
 
    I discovered a significant association between Property Area and Loan Status as a con- sequence of correlation analysis (see figure (b) heatmap above). Particularly, compared to other areas, the Semiurban data has a stronger agreement. I then conducted a more focused analysis of Semiurban data.
 
-      1.1 Credit History in SemiUrban
+   1.1 Credit History in SemiUrban
 
 Only Semiurban data were used in my correlation analysis. As anticipated, Loan Status and Credit History have the best correlation. We can see the ratio of Loan Status by Credit History below.
 <p align="center"><img src="{{ site.baseurl }}/images/30.png" width="100%" height="50%"></p>
 There are quite a few proportions that (Loan Status=’N’ and Credit History=’1.0’) or (Loan Status=’Y’ and Credit History=’0.0’). It’s interesting to note that the associ- ation between Credit History and Loan Status does not apply to other characteristics of these data.
 
-      1.2 Other variables in SemiUrban
+   1.2 Other variables in SemiUrban
 
 I looked into more elements that might affect loan status. I performed a correlation analysis with a single focus on the conditions (Loan Status=’N’ and Credit History=’1.0’) or (Loan Status=’Y’ and Credit History=’0.0’). LoanAmount and Income only have a minimal association, I discovered. As a result, I tried to visualise the data distribution in Figures 4 and 5 below.
 <p align="center"><img src="{{ site.baseurl }}/images/31.png" width="100%" height="50%"></p>
 <p align="center"><img src="{{ site.baseurl }}/images/32.png" width="100%" height="50%"></p>
 The data that is unaffected by Credit History is related to LoanAmount and Income, according to the boxplots above. According to these data, Loan Status=’Y’ is more likely the more the LoanAmount and the greater the Income. To apply it to these data, I first calculated the base measure (which is *upper inner fence) regarding each variable. (* upper inner fence = Q3 + 1.5IQR in each variable (LoanAmount, Income)) Consequently, the data beyond the base measure is most likely to decide their Loan Status unexpectedly. (e.g.) If the data which is Credit History=’Y’ and under the base measure of Income, they tend to go Loan Status=’0.0’. It means Income affects the decision that Loan Status=’0.0’ although Credit History is ’Y’.
 
-   2. Urban Data (Property Area=’Urban’)
+2. Urban Data (Property Area=’Urban’)
 
    I attempted to use Urban data with the same reasoning as above. As would be pre- dicted, there is a significant association between Loan Status and Credit History. In- terestingly, I discovered that Ratio Loan and CoapplicantIncome have a negative agree- ment with Loan Status. To find out how these two factors impact the data of (Credit
 History=’Y’ and Loan Status=’0.0’) or (Credit History=’N’ and Loan Status=’1.0’), I looked into their effects. I had anticipated that these two variables would have an impact on the target variable, but neither the data for (Credit History=’Y’ and Loan Status=’0.0’) nor (Credit History=’N’ and Loan Status=’1.0’) show any associ- ation.
 
-   3. Rural Data (Property Area=’Rural’)
+3. Rural Data (Property Area=’Rural’)
 
    I attempted to apply the aforementioned concept to Rural data. As would be predicted, there is a significant association between Loan Status and Credit History. The goal value and other variables, however, do not correlate.
 
