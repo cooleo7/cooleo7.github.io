@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  The prediction churn of bank customers with KNN (K-Nearest Neigbours)
+title:  The prediction churn of bank customers Part2) KNN (K-Nearest Neigbours)
 date:   2022-01-19 15:01:35 +0300
 image:  03.webp
 tags:   
