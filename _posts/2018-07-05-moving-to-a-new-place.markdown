@@ -2,7 +2,7 @@
 layout: post
 title:  The prediction of the gait phase at time t from the motion sensor data
 date:   2018-07-05 15:01:35 +0300
-image:  05.png
+image:  05.avif
 tags:   
 ---
 The gait cycle is defined with reference to a given limb - left or right - and comprises stance phase (from the moment of heelstrike to the moment of toe-off) and swing phase (from toe-off to subsequent heelstrike); see Fig. 2. We further subdivide stance and swing into 6 phases, giving 12 phases in total so that the gait phase p lies in the interval (0,11). The phases are numbered consecutively from the start of stance to the end of swing. Phases 0-5 inclusive make up stance, with phase 0 representing the period immediately following heel-strike. Phases 6-11 make up swing, with phase 11 representing the period immediately preceding heelstrike. This project is to predict this scalar integer using the sensor data as input. That is, using any of the sensor data available up to and including (but not beyond) time t, predict the gait phase at time t.
@@ -49,7 +49,7 @@ var1 - no
 var2 - acc_x_left, acc_x_right outliers remove needed
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/39.png" width="100%" height="50%"></p>
 Check the skewness for each dataset! if the skewness > 1,then log transform needed!
-<p align="center"><img style="margin:0px" src="{{ site.baseurl }}/images/40.png" width="100%" height="30%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/40.png" width="100%" height="30%"></p>
 Check the correlation! When I try to remove outliers, I could refer this correlation.
 
 jog1 - gyr_y_right negative correlation (-0.46), gyr_z_left positive correlation (0.72)
@@ -94,12 +94,13 @@ I defined the parameters models, dataset, learning rate, number of epochs, and d
 
 ## Result
 I used the accuracy of the model as the evaluation metric. I experimented the model dependion on the dataset (jog, walk, var) which was preprocessed and the parameters. Here is the results according to the conditions.
-<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/50.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/50.png" width="100%" height="70%"></p>
 
 
 ## Conclusion
 * jog file : All features are standardised only, was outperformed. This file is mostly not biased, so other preprocessed methods didn't work. It's enough for applying the extracted features from the Autoencoder.
 * walk file : All features are standardised only, was outperformed. This file is mostly not biased, so other preprocessed methods didn't work. It's enough for applying the extracted features from the Autoencoder. Interestingly, the feature selection based on the correlation performed better than PCA.
 * var file : This file is much more biased in 'acc_x_left' and 'acc_x_right'. Hence, the log transformation for these features worked well for extracting features from the Autoencoder.
+  
   From this experiment, I found out the features extraction from the Autoencoder much more outperformed that other data preprocessing methods like PCA and feature selection.
 
