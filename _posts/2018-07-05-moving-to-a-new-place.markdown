@@ -24,8 +24,8 @@ I added time column as this data is the sequence data based on time assuming tha
 Check the distribution of labels for each dataset!!! We can see each dataset is needed the augmentation about label. Only var2 file is mostly uniformly distributed!
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/37.png" width="100%" height="50%"></p>
 Check the outliers for each dataset! Each dataset looks lots of outliers in each boxplot. So, I assumed that when removing outliers, other factors check needed!
-<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/38.png" align="center">
-<img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/43.png" align="center"><figcaption align="center">jog1, jog2</figcaption></p>
+<figure class="half"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/38.png" align="center">
+<img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/43.png" align="center"><figcaption align="center">jog1, jog2</figcaption></figure>
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/44.png" width="50%" height="50%"></p>
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/45.png" width="50%" height="50%"></p>
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/46.png" width="50%" height="50%"></p>
