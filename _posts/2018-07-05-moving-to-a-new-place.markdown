@@ -11,7 +11,7 @@ The project will be consist of 5 parts:
 * EDA
 * Data Ingestion
 * Modelling
-* Validation
+* Result
 * Conclusion
 
 
@@ -26,10 +26,14 @@ Check the distribution of labels for each dataset!!! We can see each dataset is 
 Check the outliers for each dataset! Each dataset looks lots of outliers in each boxplot. So, I assumed that when removing outliers, other factors check needed!
 <p align="center" width="100%"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/38.png" align="center" width="45%">
 <img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/43.png" align="center" width="45%"></p>
-<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/44.png" width="50%" height="50%"></p>
-<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/45.png" width="50%" height="50%"></p>
-<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/46.png" width="50%" height="50%"></p>
-<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/47.png" width="50%" height="50%"></p>
+<p align="center" width="100%"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/44.png" width="45%">
+<img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/45.png" width="45%"></p>
+<p align="center" width="100%"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/46.png" width="45%">
+<img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/47.png" width="45%"></p>
+
+
+
+
 Each feature is normalised or not?? I found out the fact like below.
 
 jog1 - acc_x_left, acc_x_right outliers remove needed
@@ -45,7 +49,7 @@ var1 - no
 var2 - acc_x_left, acc_x_right outliers remove needed
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/39.png" width="100%" height="50%"></p>
 Check the skewness for each dataset! if the skewness > 1,then log transform needed!
-<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/40.png" width="100%" height="30%"></p>
+<p align="center"><img style="margin:0px" src="{{ site.baseurl }}/images/40.png" width="100%" height="30%"></p>
 Check the correlation! When I try to remove outliers, I could refer this correlation.
 
 jog1 - gyr_y_right negative correlation (-0.46), gyr_z_left positive correlation (0.72)
@@ -75,34 +79,27 @@ Of course, features standardisation is essential and the one-hot encoding for la
 
 ## Modelling
 I constructed the Autoencoder for extracting features and Softmax for classification.
+1. Autoencoder
+   
+Autoencoder is an unsupervised learning technique that converts input into a signal through an encoder and then creates a label through a decoder. In this project, I utilised only the encoder part. It means I could get the specific features from the encoder part like the function of feature extraction. I used the latent vector Z for the input of the softmax classifier. (refer to the picture below)
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/48.png" width="100%" height="50%"></p>
+I utilised 2 hidden layers and sigmoid as an activation function in the encoder. For tuning the Autoencoder, I used RMSprop optimiser and MSE loss function. I defined the first hidden layer as 8, and the 2nd hidden layer as 4. 
 
-Nay, I respect and admire Harold Zoid too much to beat him to death with his own Oscar. I don't 'need' to drink. I can quit anytime I want! Soothe us with sweet lies. Bender?! You stole the atom. You don't know how to do any of those.
+2. Softmax
+Softmax Regression can be considered a generalized logistic regression. It is not simply a model for binary classification, but a multinomial logistic regression (multinomial LR) for classifying multiple multi-classes. It is not a form of gathering and combining several binary classifiers, but a generalized form. Given a sample x, the softmax regression model calculates the score for each class 12 Calculate. The softmax function is applied to the scores to estimate the probability of each class. Refer to the image below.
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/49.png" width="100%" height="50%"></p>
+For tuning the Softmax, I used SGD optimiser and cross entropy loss function or hinge function. 
+I defined the parameters models, dataset, learning rate, number of epochs, and display step so that I can experiment dependiong on parameters. Basically, I defined learning_rate_RMSProp=0.02, learning_rate_GradientDescent=0.5, num_epochs=100, display_step=1.
 
-* Shinier than yours, meatbag.
-* This is the worst part. The calm before the battle.
-* Ooh, name it after me!
 
-Say what? Throw her in the brig. Hey, you add a one and two zeros to that or we walk! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Ow, my spirit! Who's brave enough to fly into something we all keep calling a death sphere?
+## Result
+I used the accuracy of the model as the evaluation metric. I experimented the model dependion on the dataset (jog, walk, var) which was preprocessed and the parameters. Here is the results according to the conditions.
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/50.png" width="100%" height="50%"></p>
 
-Hey, you add a one and two zeros to that or we walk! You won't have time for sleeping, soldier, not with all the bed making you'll be doing. It's okay, Bender. I like cooking too. Hey, what kinda party is this? There's no booze and only one hooker.
 
-![]({{ site.baseurl }}/images/07.jpg)
-*Minimalism*
+## Conclusion
+* jog file : All features are standardised only, was outperformed. This file is mostly not biased, so other preprocessed methods didn't work. It's enough for applying the extracted features from the Autoencoder.
+* walk file : All features are standardised only, was outperformed. This file is mostly not biased, so other preprocessed methods didn't work. It's enough for applying the extracted features from the Autoencoder. Interestingly, the feature selection based on the correlation performed better than PCA.
+* var file : This file is much more biased in 'acc_x_left' and 'acc_x_right'. Hence, the log transformation for these features worked well for extracting features from the Autoencoder.
+  From this experiment, I found out the features extraction from the Autoencoder much more outperformed that other data preprocessing methods like PCA and feature selection.
 
-Ummm…to eBay? But I know you in the future. I cleaned your poop. I'm just glad my fat, ugly mama isn't alive to see this day. My fellow Earthicans, as I have explained in my book 'Earth in the Balance'', and the much more popular ''Harry Potter and the Balance of Earth', we need to defend our planet against pollution. Also dark wizards.
-
-Your best is an idiot! Fry, you can't just sit here in the dark listening to classical music. And remember, don't do anything that affects anything, unless it turns out you were supposed to, in which case, for the love of God, don't not do it!
-
-You, a bobsleder!? That I'd like to see! I'm Santa Claus! There's no part of that sentence I didn't like! Noooooo! I can explain. It's very valuable.
-
-I'm Santa Claus! Is the Space Pope reptilian!? Who's brave enough to fly into something we all keep calling a death sphere? I had more, but you go ahead.
-
-It doesn't look so shiny to me. Kif might! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Oh, but you can. But you may have to metaphorically make a deal with the devil. And by "devil", I mean Robot Devil. And by "metaphorically", I mean get your coat.
-
-Check it out, y'all. Everyone who was invited is here. Anyone who laughs is a communist! You're going to do his laundry? Michelle, I don't regret this, but I both rue and lament it.
-
-Bender, we're trying our best. I daresay that Fry has discovered the smelliest object in the known universe! Oh, you're a dollar naughtier than most. Hi, I'm a naughty nurse, and I really need someone to talk to. $9.95 a minute.
-
-You, a bobsleder!? That I'd like to see! No! The kind with looting and maybe starting a few fires! Good news, everyone! There's a report on TV with some very bad news! When I was first asked to make a film about my nephew, Hubert Farnsworth, I thought "Why should I?" Then later, Leela made the film. But if I did make it, you can bet there would have been more topless women on motorcycles. Roll film!
-
-Eeeee! Now say "nuclear wessels"! Why did you bring us here? Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." That's the ONLY thing about being a slave.
