@@ -24,8 +24,8 @@ I added time column as this data is the sequence data based on time assuming tha
 Check the distribution of labels for each dataset!!! We can see each dataset is needed the augmentation about label. Only var2 file is mostly uniformly distributed!
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/37.png" width="100%" height="50%"></p>
 Check the outliers for each dataset! Each dataset looks lots of outliers in each boxplot. So, I assumed that when removing outliers, other factors check needed!
-<figure class="half"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/38.png" align="center">
-<img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/43.png" align="center"><figcaption align="center">jog1, jog2</figcaption></figure>
+<p align="center" width="100%"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/38.png" align="center" width="45%">
+<img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/43.png" align="center" width="45%"></p>
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/44.png" width="50%" height="50%"></p>
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/45.png" width="50%" height="50%"></p>
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/46.png" width="50%" height="50%"></p>
@@ -45,7 +45,7 @@ var1 - no
 var2 - acc_x_left, acc_x_right outliers remove needed
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/39.png" width="100%" height="50%"></p>
 Check the skewness for each dataset! if the skewness > 1,then log transform needed!
-<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/40.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/40.png" width="100%" height="30%"></p>
 Check the correlation! When I try to remove outliers, I could refer this correlation.
 
 jog1 - gyr_y_right negative correlation (-0.46), gyr_z_left positive correlation (0.72)
@@ -73,7 +73,8 @@ Of course, features standardisation is essential and the one-hot encoding for la
 <p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/42.png" width="100%" height="50%"></p>
 
 
-### Why not indeed!
+## Modelling
+I constructed the Autoencoder for extracting features and Softmax for classification.
 
 Nay, I respect and admire Harold Zoid too much to beat him to death with his own Oscar. I don't 'need' to drink. I can quit anytime I want! Soothe us with sweet lies. Bender?! You stole the atom. You don't know how to do any of those.
 
