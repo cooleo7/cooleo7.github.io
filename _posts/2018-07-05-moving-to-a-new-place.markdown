@@ -18,7 +18,7 @@ The project will be consist of 5 parts:
 ## EDA
 
 The dataset is consist of 3 types of the motion such as joggin, walking, and other activities. The dataset structure is like below. There are 6 files such as jog1, jog2, walk1, walk2, var1, and var2.csv.
-<p align="center"><img src="{{ site.baseurl }}/images/35.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/35.png" width="100%" height="50%"></p>
 I added time column as this data is the sequence data based on time assuming that each dataset collects and order by the time sequence.
 <p align="center"><img src="{{ site.baseurl }}/images/36.png" width="100%" height="50%"></p>
 Check the distribution of labels for each dataset!!! We can see each dataset is needed the augmentation about label. Only var2 file is mostly uniformly distributed!
