@@ -20,11 +20,11 @@ The project will be consist of 5 parts:
 The dataset is consist of 3 types of the motion such as joggin, walking, and other activities. The dataset structure is like below. There are 6 files such as jog1, jog2, walk1, walk2, var1, and var2.csv.
 <p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/35.png" width="100%" height="50%"></p>
 I added time column as this data is the sequence data based on time assuming that each dataset collects and order by the time sequence.
-<p align="center"><img src="{{ site.baseurl }}/images/36.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/36.png" width="100%" height="50%"></p>
 Check the distribution of labels for each dataset!!! We can see each dataset is needed the augmentation about label. Only var2 file is mostly uniformly distributed!
-<p align="center"><img src="{{ site.baseurl }}/images/37.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/37.png" width="100%" height="50%"></p>
 Check the outliers for each dataset! Each dataset looks lots of outliers in each boxplot. So, I assumed that when removing outliers, other factors check needed!
-<p align="center"><img src="{{ site.baseurl }}/images/38.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/38.png" width="100%" height="50%"></p>
 Each feature is normalised or not?? I found out the fact like below.
 
 jog1 - acc_x_left, acc_x_right outliers remove needed
@@ -38,9 +38,9 @@ walk2 - no
 var1 - no
 
 var2 - acc_x_left, acc_x_right outliers remove needed
-<p align="center"><img src="{{ site.baseurl }}/images/39.png" width="100%" height="100%"></p>
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/39.png" width="100%" height="50%"></p>
 Check the skewness for each dataset! if the skewness > 1,then log transform needed!
-<p align="center"><img src="{{ site.baseurl }}/images/40.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/40.png" width="100%" height="50%"></p>
 Check the correlation! When I try to remove outliers, I could refer this correlation.
 
 jog1 - gyr_y_right negative correlation (-0.46), gyr_z_left positive correlation (0.72)
@@ -54,7 +54,7 @@ walk2 - acc_y_right, acc_z_left negative correlation (-0.32, -0.3), gyr_z_left p
 var1 - gyr_y_right negative correlation (-0.25), gyr_z_left positive correlation (0.56)
 
 var2 - acc_z_left negative correlation (-0.16), gyr_z_left positive correlation (0.64)
-<p align="center"><img src="{{ site.baseurl }}/images/41.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/41.png" width="100%" height="50%"></p>
 
 
 ## Data Ingestion
@@ -65,7 +65,7 @@ I could basically get 3files (jog,walk,var) and preprocessed depending on method
 3. PCA
 4. Feature selection
 Of course, features standardisation is essential and the one-hot encoding for labels is in the model train step. To make even for the distirbution in labels, I utilised the SMOTE method. After augmentation for each dataset (jog,walk,var) is like below.
-<p align="center"><img src="{{ site.baseurl }}/images/42.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/42.png" width="100%" height="50%"></p>
 
 
 ### Why not indeed!
