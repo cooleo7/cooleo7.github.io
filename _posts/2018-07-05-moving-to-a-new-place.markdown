@@ -38,9 +38,9 @@ walk2 - no
 var1 - no
 
 var2 - acc_x_left, acc_x_right outliers remove needed
-<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/39.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/39.png" width="100%" height="50%"></p>
 Check the skewness for each dataset! if the skewness > 1,then log transform needed!
-<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/40.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/40.png" width="100%" height="50%"></p>
 Check the correlation! When I try to remove outliers, I could refer this correlation.
 
 jog1 - gyr_y_right negative correlation (-0.46), gyr_z_left positive correlation (0.72)
@@ -54,7 +54,7 @@ walk2 - acc_y_right, acc_z_left negative correlation (-0.32, -0.3), gyr_z_left p
 var1 - gyr_y_right negative correlation (-0.25), gyr_z_left positive correlation (0.56)
 
 var2 - acc_z_left negative correlation (-0.16), gyr_z_left positive correlation (0.64)
-<p align="center"><img style="margin:0px 0 10px 0" src="{{ site.baseurl }}/images/41.png" width="100%" height="50%"></p>
+<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/41.png" width="100%" height="50%"></p>
 
 
 ## Data Ingestion
