@@ -49,7 +49,7 @@ var1 - no
 var2 - acc_x_left, acc_x_right outliers remove needed
 <p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/39.png" width="100%" height="50%"></p>
 Check the skewness for each dataset! if the skewness > 1,then log transform needed!
-<p align="center" height="100%"><img src="{{ site.baseurl }}/images/40.png" width="100%" height="30%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/40.png" width="50%" height="30%"></p>
 Check the correlation! When I try to remove outliers, I could refer this correlation.
 
 jog1 - gyr_y_right negative correlation (-0.46), gyr_z_left positive correlation (0.72)
