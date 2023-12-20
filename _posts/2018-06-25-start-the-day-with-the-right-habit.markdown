@@ -1,15 +1,37 @@
 ---
 layout: post
-title:  Start the day with the right habit
+title:  Text analysis with Logistic regression and RNN
 date:   2018-06-25 15:01:35 +0300
-image:  06.jpg
-tags:   Style
+image:  06.jpeg
+tags:   
 ---
-Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." Noooooo! Perhaps, but perhaps your civilization is merely the sewer of an even greater society above you!
+This is a text classification using movie rating data from the Internet Movie Database (IMDB). It will predict sentiment (positive or negative) after checking the reviews. 
+The project will be consist of 5 parts:
+* EDA
+* Data Preprocessing
+* Modelling #1 (Logistic regression)
+* Modelling #2 (RNN)
+* Conclusion
 
-You lived before you met me?! Ow, my spirit! Humans dating robots is sick. __You people wonder why I'm still single?__ *It's 'cause all the fine robot sisters are dating humans!* I guess if you want children beaten, you have to do it yourself.
 
-## Are you crazy? I can't swallow that.
+## EDA
+Here is dataset structure like below.
+<p align="center"><img src="{{ site.baseurl }}/images/56.png" width="100%" height="50%"></p>
+At first, I checked the distribution of the length of review! The length of the reviews are mostly 100 and 6000. I also checked the outliers of the length in reviews. See the image the below.
+<p align="center"><img src="{{ site.baseurl }}/images/51.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/52.png" width="100%" height="50%"></p>
+We can check the distribution of the frequent of words in reviews using wordcloud. Refer to the image below.
+<p align="center"><img src="{{ site.baseurl }}/images/53.png" width="100%" height="50%"></p>
+We can see "br" is quite frequent in review. We can guess it includs html, so I will remove the html during data preprocessing.
+I also have to check the distribution of labels so that we can get the result of training without a bias.
+The distribution of sentiment is equally divided so that '1'(positive) is 12500 and '0'(negatibe) is 12500.
+Refer to the image below.
+<p align="center"><img src="{{ site.baseurl }}/images/54.png" width="100%" height="50%"></p>
+In the next step, I want to see the frequency of word counts, as it needs to be same length in input matrix for the training.
+We can see the data mostly has between 200 and 1000 words in average like below.
+<p align="center"><img src="{{ site.baseurl }}/images/55.png" width="100%" height="50%"></p>
+To cleanse the data, I checked the special letters, numbers, and the proportion of uppercase.
+<p align="center"><img src="{{ site.baseurl }}/images/57.png" width="70%" height="50%"></p>
 
 Oh, I don't have time for this. I have to go and buy a single piece of fruit with a coupon and then return it, making people wait behind me while I complain. Meh. So, how 'bout them Knicks? Also Zoidberg.
 
