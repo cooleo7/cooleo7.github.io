@@ -16,17 +16,17 @@ The project will be consist of 5 parts:
 
 ## EDA
 Here is dataset structure like below.
-<p align="center"><img src="{{ site.baseurl }}/images/56.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/56.png" width="80%" height="50%"></p>
 At first, I checked the distribution of the length of review! The length of the reviews are mostly 100 and 6000. I also checked the outliers of the length in reviews. See the image the below.
-<p align="center"><img src="{{ site.baseurl }}/images/51.png" width="100%" height="50%"></p>
-<p align="center"><img src="{{ site.baseurl }}/images/52.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/51.png" width="100%" height="70%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/52.png" width="100%" height="70%"></p>
 We can check the distribution of the frequent of words in reviews using wordcloud. Refer to the image below.
-<p align="center"><img src="{{ site.baseurl }}/images/53.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/53.png" width="100%" height="60%"></p>
 We can see "br" is quite frequent in review. We can guess it includs html, so I will remove the html during data preprocessing.
 I also have to check the distribution of labels so that we can get the result of training without a bias.
 The distribution of sentiment is equally divided so that '1'(positive) is 12500 and '0'(negatibe) is 12500.
 Refer to the image below.
-<p align="center"><img src="{{ site.baseurl }}/images/54.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/54.png" width="80%" height="60%"></p>
 In the next step, I want to see the frequency of word counts, as it needs to be same length in input matrix for the training.
 We can see the data mostly has between 200 and 1000 words in average like below.
 <p align="center"><img src="{{ site.baseurl }}/images/55.png" width="100%" height="50%"></p>
