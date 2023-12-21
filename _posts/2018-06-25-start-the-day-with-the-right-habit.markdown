@@ -5,6 +5,7 @@ date:   2018-06-25 15:01:35 +0300
 image:  06.jpeg
 tags:   
 ---
+<!--https://heung-bae-lee.github.io/2020/02/01/NLP_05/-->
 This is a text classification using movie rating data from the Internet Movie Database (IMDB). It will predict sentiment (positive or negative) after checking the reviews. 
 The project will be consist of 5 parts:
 * EDA
