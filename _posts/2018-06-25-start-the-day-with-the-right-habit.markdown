@@ -33,15 +33,24 @@ We can see the data mostly has between 200 and 1000 words in average like below.
 To cleanse the data, I checked the special letters, numbers, and the proportion of uppercase.
 <p align="center"><img src="{{ site.baseurl }}/images/57.png" width="70%" height="50%"></p>
 
-Oh, I don't have time for this. I have to go and buy a single piece of fruit with a coupon and then return it, making people wait behind me while I complain. Meh. So, how 'bout them Knicks? Also Zoidberg.
 
-1. We need rest. The spirit is willing, but the flesh is spongy and bruised.
-2. Fry, we have a crate to deliver.
-3. Have you ever tried just turning off the TV, sitting down with your children, and hitting them?
+## Data Preprocessing
+1. Remove HTML tag
+2. Replace special letters (non-english) to space(" ")
+3. Replace uppercase to lowercase and after that split (word split )
+4. remove stopwords
 
-### Why not indeed!
+From the preprocessing, we can compare the data before preprocessing and after. Refer to below the images.
+<p align="center"><img src="{{ site.baseurl }}/images/58.png" width="100%" height="50%"></p>
+*before preprocessing*
+<p align="center"><img src="{{ site.baseurl }}/images/59.png" width="100%" height="50%"></p>
+*after preprocessing*
+To train the data, we have to convert the text to a matrix. (vectorisation)
+Currently, each data has a different length, but the length must be unified to be able to apply it to future models. So a specific length is set as the maximum length and for longer data, it has to be truncated the latter part and, in case of short data, it has to be padded with a 0 value.
+For padding processing, I used the pad_sequences function. When using this function, you can specify as arguments the data to apply padding to, the maximum length value, and whether to put the 0 value before or after the data.
+Also, note that words are counted starting from the last word. Here, the maximum length was set to 174, which was calculated when statistics on the number of words were calculated during the data analysis process. This is the median value. Usually, the median is used instead of the average, because the average is sensitive to outliers. After vectoriation, data structure is like below.
+<p align="center"><img src="{{ site.baseurl }}/images/60.png" width="100%" height="50%"></p>
 
-Nay, I respect and admire Harold Zoid too much to beat him to death with his own Oscar. I don't 'need' to drink. I can quit anytime I want! Soothe us with sweet lies. Bender?! You stole the atom. You don't know how to do any of those.
 
 * Shinier than yours, meatbag.
 * This is the worst part. The calm before the battle.
