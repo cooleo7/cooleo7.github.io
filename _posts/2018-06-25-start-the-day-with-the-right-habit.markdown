@@ -45,38 +45,21 @@ From the preprocessing, we can compare the data before preprocessing and after. 
 *before preprocessing*
 <p align="center"><img src="{{ site.baseurl }}/images/59.png" width="100%" height="50%"></p>
 *after preprocessing*
-To train the data, we have to convert the text to a matrix. (vectorisation)
-Currently, each data has a different length, but the length must be unified to be able to apply it to future models. So a specific length is set as the maximum length and for longer data, it has to be truncated the latter part and, in case of short data, it has to be padded with a 0 value.
-For padding processing, I used the pad_sequences function. When using this function, you can specify as arguments the data to apply padding to, the maximum length value, and whether to put the 0 value before or after the data.
-Also, note that words are counted starting from the last word. Here, the maximum length was set to 174, which was calculated when statistics on the number of words were calculated during the data analysis process. This is the median value. Usually, the median is used instead of the average, because the average is sensitive to outliers. After vectoriation, data structure is like below.
+
+To train the data, we have to convert the text to a matrix. (vectorisation) Currently, each data has a different length, but the length must be unified to be able to apply it to future models. So a specific length is set as the maximum length and for longer data, it has to be truncated the latter part and, in case of short data, it has to be padded with a 0 value. For padding processing, I used the pad_sequences function. When using this function, you can specify as arguments the data to apply padding to, the maximum length value, and whether to put the 0 value before or after the data. Also, note that words are counted starting from the last word. Here, the maximum length was set to 174, which was calculated when statistics on the number of words were calculated during the data analysis process. This is the median value. Usually, the median is used instead of the average, because the average is sensitive to outliers. After vectoriation, data structure is like below.
 <p align="center"><img src="{{ site.baseurl }}/images/60.png" width="100%" height="50%"></p>
+One important point when preprocessing evaluation data is that when creating an index vector through Tokenizer, the Tokenizer object previously applied to the learning data must be used. If you create a new one, the index of each word for the training data and evaluation data will be different.
+This is because it cannot be applied properly to the model. If a word that is not included in the train data exists in the test data, the probability must be set to 0.
 
 
-* Shinier than yours, meatbag.
-* This is the worst part. The calm before the battle.
-* Ooh, name it after me!
+## Modelling #1 (Logistic regression)
+To apply logistic regression algoritm, I vectorised the input data with TF-IDF method. What is TF-IDF?
+It is the product of TF and IDF. It gives a weight to each term in a document, emphasizing terms that are important to that document but not common across the entire corpus.
+TF-IDF(t,d,D)=TF(t,d)×IDF(t,D)
+<p align="center"><img src="{{ site.baseurl }}/images/61.png" width="80%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/62.png" width="80%" height="50%"></p>
+In summary, TF-IDF is used to quantify the importance of a term within a specific document in the context of a larger corpus.
+From logistic regression with TF-IDF, I got the accuracy of the model as __85%.__
 
-Say what? Throw her in the brig. Hey, you add a one and two zeros to that or we walk! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Ow, my spirit! Who's brave enough to fly into something we all keep calling a death sphere?
 
-Hey, you add a one and two zeros to that or we walk! You won't have time for sleeping, soldier, not with all the bed making you'll be doing. It's okay, Bender. I like cooking too. Hey, what kinda party is this? There's no booze and only one hooker.
-
-![]({{ site.baseurl }}/images/07.jpg)
-*Minimalism*
-
-Ummm…to eBay? But I know you in the future. I cleaned your poop. I'm just glad my fat, ugly mama isn't alive to see this day. My fellow Earthicans, as I have explained in my book 'Earth in the Balance'', and the much more popular ''Harry Potter and the Balance of Earth', we need to defend our planet against pollution. Also dark wizards.
-
-Your best is an idiot! Fry, you can't just sit here in the dark listening to classical music. And remember, don't do anything that affects anything, unless it turns out you were supposed to, in which case, for the love of God, don't not do it!
-
-You, a bobsleder!? That I'd like to see! I'm Santa Claus! There's no part of that sentence I didn't like! Noooooo! I can explain. It's very valuable.
-
-I'm Santa Claus! Is the Space Pope reptilian!? Who's brave enough to fly into something we all keep calling a death sphere? I had more, but you go ahead.
-
-It doesn't look so shiny to me. Kif might! You guys aren't Santa! You're not even robots. How dare you lie in front of Jesus? Oh, but you can. But you may have to metaphorically make a deal with the devil. And by "devil", I mean Robot Devil. And by "metaphorically", I mean get your coat.
-
-Check it out, y'all. Everyone who was invited is here. Anyone who laughs is a communist! You're going to do his laundry? Michelle, I don't regret this, but I both rue and lament it.
-
-Bender, we're trying our best. I daresay that Fry has discovered the smelliest object in the known universe! Oh, you're a dollar naughtier than most. Hi, I'm a naughty nurse, and I really need someone to talk to. $9.95 a minute.
-
-You, a bobsleder!? That I'd like to see! No! The kind with looting and maybe starting a few fires! Good news, everyone! There's a report on TV with some very bad news! When I was first asked to make a film about my nephew, Hubert Farnsworth, I thought "Why should I?" Then later, Leela made the film. But if I did make it, you can bet there would have been more topless women on motorcycles. Roll film!
-
-Eeeee! Now say "nuclear wessels"! Why did you bring us here? Yeah, and if you were the pope they'd be all, "Straighten your pope hat." And "Put on your good vestments." That's the ONLY thing about being a slave.
+## Modelling #2 (RNN)
