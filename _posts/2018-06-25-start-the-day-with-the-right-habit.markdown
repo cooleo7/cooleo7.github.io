@@ -62,4 +62,8 @@ In summary, TF-IDF is used to quantify the importance of a term within a specifi
 From logistic regression with TF-IDF, I got the accuracy of the model as __85%.__
 
 
-## Modelling #2 (RNN)
+## Modelling #2 (VADER)
+In simple, I just applied the VADER. VADER is the rule-based lexicon for social media sentiment analysis. Therefore, we can use the function from the VADER. For example, I can get the result like below for the first review text. 'neg' is negative, 'neu' is neutral, and 'pos' is positive.
+{'neg': 0.183, 'neu': 0.63, 'pos': 0.187, 'compound': -0.5583}
+Interestingly, I got the lower accuracy from VADER compared to logistic regression.
+{accuracy: 0.6762, precision: 0.6287, recall: 0.8606}
