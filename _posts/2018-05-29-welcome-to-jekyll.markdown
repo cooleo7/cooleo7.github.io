@@ -60,67 +60,26 @@ $\sigma(M) = softmax(We_u + b)$
 
 ## Experiment - Data preprocess & Model learning
 1. Data preprocess
+   
    To apply my model, I preprocess the original dataset. For each value in the movieId column, the column name needs to be changed. This dataset creation is produced by a pivot. Given that movieId can take one of 9066 potential values, this dataset should have a dimension of 9068. UserId and timestamp are two more columns. I decrease the dimension from 9066 to the previously mentioned 15, 43, and 57, with the exception of UserId and timestamp in two columns. As a result, for each experiment, the input data has the following shapes : $10251\times17, 10897\times45,$ and $10931\times59$.
 <p align="center"><img src="{{ site.baseurl }}/images/66.png" width="100%" height="100%"></p>
 2. Model learning
+
    A binary cross entropy loss function, Adam\cite{Adam} as the optimizer, and ReLU as the activation function are used in the model's learning process.
 Users are divided into batches of $k = 256$ during training. The final probability distribution is $k \times dim(M)$, the encoder's output embedding space is $k \times dim(D)$, and the input of the encoder has form $k \times dim(T) \times dim(H)$. $T$ stands for the collection of timestamps, $H$ for the total number of items, $D$ for the embedding dimension, and $M$ for the total number of anticipated items.
 
 
 ## Result
 1. Condition
+   
    I experiment six cases. The hyper-parameter's state is as follows:
-   \begin{table}[h]
-%\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|c|}
-\hline
-          \multicolumn{1}{m{1.8cm}|}{}& 
-          \multicolumn{1}{m{1.3cm}|}{batch size}  & \multicolumn{1}{m{1.3cm}|}{Head number}  & \multicolumn{1}{m{1.3cm}|}{trans former layer}  & \multicolumn{1}{m{1.3cm}|}{dimen sion}  & \multicolumn{1}{m{1.3cm}|}{dropout}      &
-          \multicolumn{1}{m{1.3cm}|}{learning rate} & \multicolumn{1}{m{1.3cm}|}{rating scale}\\
-\hline
-\multicolumn{1}{m{1.8cm}|}{CASE1} & 256 & 2 & 2  & 56 & 0.2 & 0.001 & scale\\
-\hline
-\multicolumn{1}{m{1.8cm}|}{CASE2}  & 256 & 4 & 2 & 56 & 0.2 & 0.001 & scale\\
-\hline
-\multicolumn{1}{m{1.8cm}|}{CASE3}  & 256 & 7 & 2 & 56 & 0.2 & 0.001 & scale\\
-\hline
-\multicolumn{1}{m{1.8cm}|}{CASE4}  & 256 & 7 & 2 & 28 & 0.2 & 0.001 & scale\\
-\hline
-\multicolumn{1}{m{1.8cm}|}{CASE5}  & 256 & 7 & 2 & 70 & 0.2 & 0.001 & scale\\
-\hline
-\multicolumn{1}{m{1.8cm}|}{CASE6}  & 256 & 7 & 2 & 70 & 0.2 & 0.001 & no scale\\
-\hline
-\end{tabular}
-\caption{Hyper-parameters in models}
-%\end{center}
-\end{table}
+<p align="center"><img src="{{ site.baseurl }}/images/67.png" width="100%" height="100%"></p>   
+2. Performance
+<p align="center"><img src="{{ site.baseurl }}/images/68.png" width="100%" height="100%"></p>   
+
+
+## Conclusion
+A Self-Attention mechanism from the transformer model has been used with con- siderable effectiveness in the language model. Because the sequential data pro- duced by user interaction with the items is equivalent to the context in phrases, I am able to identify the accomplishment by employing the Self-Attention mech- anism in the recommender system. If the dimension is the smallest, as in CASE4, and the weight of rating is ignored, as in CASE6, it outperformed all other measures the best. In terms of user groups, we may evaluate the model using a dataset that includes information about the users’ personal characteristics, such as their age, gender, occupation, where they live, etc. We can assess the model’s performance or try to evaluate ensemble models in a future project, depending on the type of dataset. For instance, we can utilise some classification approaches to divide people into groups using their personal information, and then apply the model to each category. 
 
 
 
-
-
-3. 
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
-
-
-\bibliographystyle{plain}
-\begin{thebibliography}{OOO}
-\bibitem[47]{BERT}
-	Jacob Devlin, Ming-Wei Chang, Kenton Lee and Kristina Toutanova, 
-	{\it BERT:
-Pre-training of Deep Bidirectional Transformers for Language Understanding},
-	CoRR abs/1810.04805 (2018), 2018
