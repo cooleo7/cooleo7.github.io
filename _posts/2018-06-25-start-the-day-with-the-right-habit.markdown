@@ -2,7 +2,7 @@
 layout: post
 title:  Text analysis with Logistic regression and RNN
 date:   2018-06-25 15:01:35 +0300
-image:  06.jpeg
+image:  06.webp
 tags:   
 ---
 <!--https://heung-bae-lee.github.io/2020/02/01/NLP_05/-->
