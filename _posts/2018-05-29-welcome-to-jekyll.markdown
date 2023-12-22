@@ -33,8 +33,11 @@ MathJax.Hub.Config({
   }
 });
 </script>
-I define the movies watched and rated by a user as items. I refer to the union of the items and rating values as a user’s data. Consider a set of users $U$, their corresponding rating values $R$ and a set of items $M$. $M_u \subset M$ is the set of items watched by user $u \in U$ and $R_u$ their rating values. I denote the data of user $u$ by $H_c = M_c \cup R_c$. My model define as :
+I define the movies watched and rated by a user as items. I refer to the union of the items and rating values as a user’s data. Consider a set of users $U$, their corresponding rating values $R$ and a set of items $M$. $M_u \subset M$ is the set of items watched by user $u \in U$ and $R_u$ their rating values. I denote the data of user $u$ by $H_c = M_c \cup R_c$. 
+
+My model define as :
 $f : (u, H_u) \to M \times [0, 1]$,
+
 where $u$ is a user, $H_u$ as inputs, and returns a probability distribution $P^M_u$ over the set of items $M$ corresponding to the probability of user $u$ watching them over the next period. For $t = [0,...,T]$, where $T$ is the length of the sequence, consider a sequence of inputs $H^t_u$. In order to estimate the likelihood of choosing items in $M$ during period $T + 1$, my model aims to learn a function $f: (u, H^0_u,..., H^T_u)$ that captures the sequential information. I just refer to the user's data sequence as their history to keep things simple. The input and output of function $f$ for the current dataset are shown the image below.
 <p align="center"><img src="{{ site.baseurl }}/images/63.png" width="100%" height="100%"></p>
 
