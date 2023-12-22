@@ -18,6 +18,21 @@ The goal of this project is finding out the accuracy of prediction depending on 
 
 
 ## Basic concept
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+	ignoreClass: ["gist-file"],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
 I define the movies watched and rated by a user as items. I refer to the union of the items and rating values as a user’s data. Consider a set of users U, their corresponding rating values R and a set of items M. Mu ⊂ M is the set of items watched by user u ∈ U and Ru their rating values. I denote the data of user u by Hc = Mc ∪ Rc. My model define as :
 
 f : (u, Hu) → M × [0, 1]
