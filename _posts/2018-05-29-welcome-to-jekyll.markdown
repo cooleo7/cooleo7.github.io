@@ -33,11 +33,15 @@ MathJax.Hub.Config({
   }
 });
 </script>
-I define the movies watched and rated by a user as items. I refer to the union of the items and rating values as a user’s data. Consider a set of users U, their corresponding rating values R and a set of items M. Mu ⊂ M is the set of items watched by user u ∈ U and Ru their rating values. I denote the data of user u by Hc = Mc ∪ Rc. My model define as :
+I define the movies watched and rated by a user as items. I refer to the union of the items and rating values as a user’s data. Consider a set of users $U$, their corresponding rating values $R$ and a set of items $M$. $M_u \subset M$ is the set of items watched by user $u \in U$ and $R_u$ their rating values. I denote the data of user $u$ by $H_c = M_c \cup R_c$. My model define as :
+\begin{center} $f : (u, H_u) \to M \times [0, 1]$
+\end{center} ,
+where $u$ is a user, $H_u$ as inputs, and returns a probability distribution $P^M_u$ over the set of items $M$ corresponding to the probability of user $u$ watching them over the next period. For $t = [0,...,T]$, where $T$ is the length of the sequence, consider a sequence of inputs $H^t_u$. In order to estimate the likelihood of choosing items in $M$ during period $T + 1$, my model aims to learn a function $f: (u, H^0_u,..., H^T_u)$ that captures the sequential information. I just refer to the user's data sequence as their history to keep things simple. The input and output of function $f$ for the current dataset are shown the image below.
+<p align="center"><img src="{{ site.baseurl }}/images/63.png" width="100%" height="100%"></p>
 
-f : (u, Hu) → M × [0, 1]
 
-, where u is a user, Hu as inputs, and returns a probability distribution PuM over the set of items M corresponding to the probability of user u watching them over the next period. For t = [0, ..., T ], where T is the length of the sequence, consider a sequence of inputs $H_u^t$. In order to estimate the likelihood of choosing items in M during period T + 1, my model aims to learn a function f : (u, Hu0, ..., HuT ) that captures the sequential information. I just refer to the user’s data sequence as their history to keep things simple. The input and output of function f for the current dataset are shown in Figure 3.2.
+## Data Presentation
+I express the time periods as words and the data for a particular period as letters because the task is comparable to one involving language modelling\cite{BERT}. The history created by T sequences of data values can be represented as the input to the model as a sentence of T words with a set number of letters in each word. I demonstrate how a word from a phrase is represented in the context of the current dataset in Figure 3.3.
 
 
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
@@ -59,3 +63,12 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+
+\bibliographystyle{plain}
+\begin{thebibliography}{OOO}
+\bibitem[47]{BERT}
+	Jacob Devlin, Ming-Wei Chang, Kenton Lee and Kristina Toutanova, 
+	{\it BERT:
+Pre-training of Deep Bidirectional Transformers for Language Understanding},
+	CoRR abs/1810.04805 (2018), 2018
