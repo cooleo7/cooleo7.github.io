@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Recommender systemd based on self-attention mechanism"
+title:  "Recommender system based on self-attention mechanism"
 date:   2018-05-29 18:05:55 +0300
 image:  10.png
 tags:   
