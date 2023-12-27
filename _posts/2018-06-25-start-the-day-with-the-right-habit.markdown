@@ -72,7 +72,7 @@ Interestingly, I got the lower accuracy from VADER compared to logistic regressi
 
 
 ## Modelling #3 (CNN)
-In this model, I vectorised the input data with a GLoVE embedding method. I experimented GLoVE embedding size 50 and 100 each. I utilised the CNN which has 100 filters using the window size 2,3,4, and 5. Here is the plot of the accuracy and loss having a GLoVE embedding size 50 and 100 each. I got the accuracy __87.7%__ from GLoVE embedding size 50 and __88.4%__ from GLoVE embedding size 100.
+In this model, I vectorised the input data with a GLoVE embedding method. GloVe is designed to capture semantic similarities between words and learns word vectors based on statistical information obtained from corpora. Therefore, GloVe word embeddings reflect a variety of linguistic characteristics, including semantic similarity between words, relationships between words, and use of words in context. I experimented GLoVE embedding size 50 and 100 each. I utilised the CNN which has 100 filters using the window size 2,3,4, and 5. Here is the plot of the accuracy and loss having a GLoVE embedding size 50 and 100 each. I got the accuracy __87.7%__ from GLoVE embedding size 50 and __88.4%__ from GLoVE embedding size 100.
 <p align="center"><img src="{{ site.baseurl }}/images/69.png" width="100%" height="50%"></p>
 <p align="center"><img src="{{ site.baseurl }}/images/70.png" width="100%" height="50%"></p>
 
