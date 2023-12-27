@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Text analysis with Logistic regression and RNN
+title:  Text analysis with Logistic regression, VADER, and CNN
 date:   2018-06-25 15:01:35 +0300
 image:  06.webp
 tags:   
@@ -11,7 +11,8 @@ The project will be consist of 5 parts:
 * EDA
 * Data Preprocessing
 * Modelling #1 (Logistic regression)
-* Modelling #2 (RNN)
+* Modelling #2 (VADER)
+* Modelling #3 (CNN)
 * Conclusion
 
 
@@ -22,7 +23,7 @@ At first, I checked the distribution of the length of review! The length of the 
 <p align="center"><img src="{{ site.baseurl }}/images/51.png" width="100%" height="70%"></p>
 <p align="center"><img src="{{ site.baseurl }}/images/52.png" width="100%" height="70%"></p>
 We can check the distribution of the frequent of words in reviews using wordcloud. Refer to the image below.
-<p align="center"><img src="{{ site.baseurl }}/images/53.png" width="100%" height="60%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/53.png" width="100%" height="800%"></p>
 We can see "br" is quite frequent in review. We can guess it includs html, so I will remove the html during data preprocessing.
 I also have to check the distribution of labels so that we can get the result of training without a bias.
 The distribution of sentiment is equally divided so that '1'(positive) is 12500 and '0'(negatibe) is 12500.
@@ -68,3 +69,10 @@ In simple, I just applied the VADER. VADER is the rule-based lexicon for social 
 {'neg': 0.183, 'neu': 0.63, 'pos': 0.187, 'compound': -0.5583}
 Interestingly, I got the lower accuracy from VADER compared to logistic regression.
 {accuracy: 0.6762, precision: 0.6287, recall: 0.8606}
+
+
+## Modelling #3 (CNN)
+In this model, I vectorised the input data with a GLoVE embedding method. I experimented GLoVE embedding size 50 and 100 each. I utilised the CNN which has 100 filters using the window size 2,3,4, and 5. Here is the plot of the accuracy and loss having a GLoVE embedding size 50 and 100 each.
+<p align="center"><img src="{{ site.baseurl }}/images/61.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/62.png" width="100%" height="50%"></p>
+
