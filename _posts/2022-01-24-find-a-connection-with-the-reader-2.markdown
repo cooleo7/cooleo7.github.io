@@ -1,62 +1,75 @@
 ---
 layout: post
-title:  The prediction churn of bank customers -Part1) Binomial Logistic Regression
-date: 2022-01-24 15:01:35 +0300
-image:  02.png
+title:  Bank customers segmentation using K-means depediong on features
+date: 2022-01-24 10:01:35 +0300
+image:  07.png
 tags:   
 ---
-We can identify which customers are likely to leave the bank through various ML & DL methods. It is crucial that banks conduct more thorough data analysis. The purpose of this project is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
+This project is the bank customers segmentation using __k-means.__ This dataset can be downloaded <a href="[https://www.kaggle.com/datasets/tanishaj225/loancsv/code?datasetId=1198164](https://www.kaggle.com/datasets/shivamb/bank-customer-segmentation/data)">here</a>.
 
-The goal of this project is finding out the accuracy of prediction depending on the condition in experiments. The project will be consist of 4 parts:
-* EDA (Explatory Data Analysis)
+The goal of this project is finding out the importance of features extraction for calssification problem. The project will be consist of 4 parts:
+* EDA - Data preprocessing 
 * Method explanation
-* The condition in experiment
+  (1) K-means with features selection
+  (2) K-means with PCA
+  (3) K-means with features extraction from Encoder
 * Result
 
+
 ## EDA - Data preprocessing 
-![]({{ site.baseurl }}/images/11.png)
+![]({{ site.baseurl }}/images/71.png)
 *Data Structure*
-
-1. Data encoding
-   
-   Some variables are categorical, so I converted them to binary values. To apply cat- egorization issues, this is crucial (for instance, nation and
-   gender). I consequently developed new features like country GE, country FR, country SP, and gender M and gender F.
-   
-2. Data scaling
-   
-   I used log transformation and standardisation to change the features’ scale.
-   
-3. Relation between variables
-   ![]({{ site.baseurl }}/images/12.png)
-   ![]({{ site.baseurl }}/images/13.png)
-   
-   As illustrated in Figure 1 below, I discovered that age, country GE, balance, and active member have better correlations with churn than other factors.
-   I chose these four features as the main features as a result.
-   ![]({{ site.baseurl }}/images/14.png)
-   *Figure 1 heatmap : correlation between features*
-
-4. Data Drop & replacement
-   
-   Since age contains certain outliers, as shown in (a) below, I tried to remove them and also did so for only churn=1. As can be seen in (b) below, there    are a lot of 0 values. I replaced these 0 values with a mean of balance.
-   ![]({{ site.baseurl }}/images/15.png)
-
-   
-## The concept of algorithm
-
-I tried separating train data and test data with 5-Fold cross validation to prevent the interruption from biased data and increase the accuracy of a model.
-Below is a classification of regression as a special case.
-![]({{ site.baseurl }}/images/16.png)
-![]({{ site.baseurl }}/images/17.png)
+This dataset is quite huge over 1000000 raws. I removed null values and created the age variable that might be impactful feature. However, the bias of age is quite serious like below.
+<p align="center" width="100%"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/72.png" align="center" width="45%">
+<img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/73.png" align="center" width="45%"></p>
+Therefore, I removed the age under 0 and over 200. The preprocessed age feature distribution is like below.
+<p align="center"><img src="{{ site.baseurl }}/images/74.png" width="80%" height="50%"></p>
+Next, focus on the money variables! The bias is also heavy like the age.
+<p align="center"><img src="{{ site.baseurl }}/images/75.png" width="100%" height="100%"></p>
+It has to be normalised through log transformation.
+<p align="center"><img src="{{ site.baseurl }}/images/76.png" width="100%" height="100%"></p>
+Next, go through the locations! The location column has too many categories over 7500. I removed the categorical values that proportioned under 10%. In result, only 1000 locations left. After that, categorical columns like gender and location are converted to numerical values to apply K-means. I used the label encoder method. 
+Find out the correlations between varialbes!
+<p align="center"><img src="{{ site.baseurl }}/images/77.png" width="100%" height="100%"></p>
+I discovered a bit strong relationship between the age and money column that log transformed. Before applying K-means, I made all features standardised and left only 100000 raws. Lastly, I checkd the bias of all features like below.
+<p align="center"><img src="{{ site.baseurl }}/images/78.png" width="100%" height="100%"></p>
+All columns are mostly normalised except the previous categorical variables. I removed the money variables that is not log transformed.
 
 
-## Conditions in experiment
-I tried to apply each case below to the model.
-![]({{ site.baseurl }}/images/18.png)
+## K-means with features selection
+I tried optimal K from K-means using the preprocessed dataset that includes all features such as TransactionDate, CustomerAge, CustAccountBalance_log, TransactionAmount (INR)_log, Gender, and Location. I set the parameters for K-means like "init":"k-means++", "max_iter":300, "random_state":0. To figure out the optimal K, I used the elbow method and checked the silhouette values like below.
+<p align="center"><img src="{{ site.baseurl }}/images/79.png" width="100%" height="100%"></p>
+From this, I got the optial K is 5. I visualised the area of silhouette coefficients depending on the number of clusters as I want to make sure that it's reasonable.
+<p align="center"><img src="{{ site.baseurl }}/images/80.png" width="100%" height="100%"></p>
+Even though the silhouette coefficients at K=4 is the biggest, the area of the silhouette coefficient in each cluster is mostly equal based on the average of silhouette score at K=5. 
 
-## Result
-The accuracy is negatively impacted by the log transform, as can be shown in Table 1 below. In comparison to the original features, the model with features that excluded outliers is more accurate except the features log transformed. The model with features that eliminated age outliers and changed 0 values to the balance mean produced the best results, in particular as shown Table 1.
-![]({{ site.baseurl }}/images/19.png)
-I drew graph (Figure 2) to demonstrate how effectively this model (case 18) predicted labels. Since the value of y is greater than 0.5 as indicated by the idea 3.1.1 section above, orange dots that are beyond the green line are assigned the label 1. Additionally, the orange dots below the green line are classified to label 0.
-![]({{ site.baseurl }}/images/20.png)
+From the correlation analysis, I found out a bit strong relationship between age and CustAccountBalance_log. Therefore, I visualised the clusters using 2 main features age and CustAccountBalance_log like the below. But it didn't look clearly classified.
+<p align="center"><img src="{{ site.baseurl }}/images/81.png" width="100%" height="100%"></p>
+
+
+## K-means with PCA
+From the first experiment, I concluded it needed feature extraction. Based on the correlation analysis, I set the number of the main features to 3. I utilised PCA as features extraction. I tried optimal K from K-means using the preprocessed dataset that includes 3 principal features from PCA. 
+
+The parameters for K-means like "init":"k-means++", "max_iter":300, "random_state":0
+<p align="center"><img src="{{ site.baseurl }}/images/82.png" width="100%" height="100%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/83.png" width="100%" height="100%"></p>
+I visualised the clusters using 2 principal features from PCA like below. It looked more clear than the first experiment, but it was not still celarly classified.
+<p align="center"><img src="{{ site.baseurl }}/images/84.png" width="100%" height="100%"></p>
+
+
+## K-means with Encoder method
+From the PCA, it needed more exact features extraction. The idea of this method is to use the encoder part of Autoencoder method. From the encoder, I got 2 main features. I utilised 2 hidden layers each size 4 and 2.
+
+The parameters for K-means like "init":"k-means++", "max_iter":300, "random_state":0
+<p align="center"><img src="{{ site.baseurl }}/images/85.png" width="100%" height="100%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/86.png" width="100%" height="100%"></p>
+I visualised the clusters using 2 main features from encoder like below. It was quite celarly classified like below.
+<p align="center"><img src="{{ site.baseurl }}/images/87.png" width="100%" height="100%"></p>
+
+
+## Conclusion
+K-means is the one of the outperformed methods for classification. The most important thing is to set the K that affects the performace. From 3 experiments, I found out the importance of features extraction and the encoder was outperformed among them.
+
+
 
 
