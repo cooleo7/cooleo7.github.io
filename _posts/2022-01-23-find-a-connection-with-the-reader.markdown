@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Bank customers segmentation using K-means depediong on features
-date: 2022-01-24 10:01:35 +0300
+date: 2022-01-23 10:01:35 +0300
 image:  07.png
 tags:   
 ---
