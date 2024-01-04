@@ -10,10 +10,13 @@ This project is the bank customers segmentation using __k-means.__ This dataset 
 The goal of this project is finding out the importance of features extraction for calssification problem. The project will be consist of 4 parts:
 * EDA - Data preprocessing 
 * Method explanation
+  
   (1) K-means with features selection
+  
   (2) K-means with PCA
+  
   (3) K-means with features extraction from Encoder
-* Result
+* Conclusion
 
 
 ## EDA - Data preprocessing 
