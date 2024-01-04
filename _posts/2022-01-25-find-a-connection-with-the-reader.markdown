@@ -2,7 +2,7 @@
 layout: post
 title:  Bank customers segmentation using K-means depediong on features
 date: 2022-01-25 10:01:35 +0300
-image:  07.jpeg
+image:  07.jpg
 tags:   
 ---
 This project is the bank customers segmentation using __k-means.__ This dataset can be downloaded <a href="[https://www.kaggle.com/datasets/tanishaj225/loancsv/code?datasetId=1198164](https://www.kaggle.com/datasets/shivamb/bank-customer-segmentation/data)">here</a>.
