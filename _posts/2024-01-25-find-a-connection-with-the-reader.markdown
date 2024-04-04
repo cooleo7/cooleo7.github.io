@@ -19,7 +19,27 @@ The goal of this project is finding out the optimal premium price for the custom
 ## EDA & Data preprocessing 
 ![]({{ site.baseurl }}/images/88.png)
 *Data Structure*
-This dataset is quite huge over 1000000 raws. I removed null values and created the age variable that might be impactful feature. However, the bias of age is quite serious like below.
+This dataset is 2000 raws, 15 columns, and all values are Non-null. So I don't need to do null values preprocessing. Overall, I looked through the relations between all nemerical variables.
+I found out the positive relation between Claims_Amount and  Claims_Count , weak positive relation between Premium and Price_Diff. 
+<p align="center"><img src="{{ site.baseurl }}/images/89.png" width="100%" height="100%"></p>
+In summsry, we can see the relations in the heatmap below.
+<p align="center"><img src="{{ site.baseurl }}/images/90.png" width="100%" height="100%"></p>
+* Strong positive relation between Claims_Amount and  Claims_Count. 
+* Weak positive relation between Premium and  Price_Diff.  
+* Weak positive relation between Claims_Amount  and  Plan_Count,  Claims_Count  and  Plan_Count.
+Next, I looked through the relations between each feature and target. 
+More claims customers have, more accepting an offer like below (left). (Claim_flag 1 : Claims they have, 0 : No claim.) Even though the premium decreased, there is no tendency to accept an offer. Even if the premium increases, they tend to accept an offer slightly more proportionally like below (right). (Price_Cat -1 : premium decrease, 0 : base premium, 1 : premium increase)
+<p align="center"><img src="{{ site.baseurl }}/images/91.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/92.png" width="50%" height="50%"></p>
+
+
+
+
+
+
+
+
+
+. I removed null values and created the age variable that might be impactful feature. However, the bias of age is quite serious like below.
 <p align="center" width="100%"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/72.png" align="center" width="45%">
 <img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/73.png" align="center" width="45%"></p>
 Therefore, I removed the age under 0 and over 200. The preprocessed age feature distribution is like below.
