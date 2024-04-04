@@ -42,12 +42,14 @@ I also found out the wrong values in Age column. So, it needs to be modified. Ag
 ## Experiment - XGB, Logistic regression, LGBM, Random Forest, and MLP
 I tried experimenting with various conditions and algorithms. This is the outcome of the trials.
 As a final model, I chose the XGBoost. (red) Its accuracy is mostly the highest of all the models I tried, of course, but it also performs the best in terms of other metrics. However, we must exercise caution when evaluating the model's performance based just on accuracy. I believe that recall is a crucial component in this industry since it directly affects sales. The model's output comes first, and then marketing & pricing strategy, which in turn produces sales results. See the metrics like below.
-<p align="center"><img src="{{ site.baseurl }}/images/99.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/100.png" width="50%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/98.png" width="100%" height="100%"></p>
 
 
 ## Feture importance
 To investigate the importance of features, I utilised the shap and the XGB plot_importance. Plan_flag, Plan_Count, Age_Cat, and Claims_Count are contributed in aspect of the shap. Price_Diff, Purchase_Price, Premium, and SP_CA are contributed more than other features based on XGB plot_importance.
-<p align="center"><img src="{{ site.baseurl }}/images/82.png" width="100%" height="100%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/99.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/100.png" width="50%" height="50%"></p>
+
+
 
 
 ## K-means with Encoder method
