@@ -8,8 +8,7 @@ tags:
 This project is about building the insurance premium pricing model utilising XGBoost, Logistic regression, LGBM, Rnadom Forest, and MLP. 
 
 The goal of this project is finding out the optimal premium price for the customers. I also investigated which features are important for the final model and the relationship between the price elasticity and the change in the price. The project will be consist of 4 parts:
-* EDA - Data preprocessing 
-* Price Elasticity
+* EDA & Data preprocessing 
 * Experiment - XGB, Logistic regression, LGBM, Random Forest, and MLP
 * Feture importance
 * Experiment with the change in premium price
@@ -31,33 +30,26 @@ In summsry, we can see the relations in the heatmap below.
 Next, I looked through the relations between each feature and target. 
 More claims customers have, more accepting an offer like below (left). (Claim_flag 1 : Claims they have, 0 : No claim.) Even though the premium decreased, there is no tendency to accept an offer. Even if the premium increases, they tend to accept an offer slightly more proportionally like below (right). (Price_Cat -1 : premium decrease, 0 : base premium, 1 : premium increase)
 <p align="center"><img src="{{ site.baseurl }}/images/91.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/92.png" width="50%" height="50%"></p>
+More plans they have, more accepting an offer!
+<p align="center"><img src="{{ site.baseurl }}/images/93.png" width="100%" height="50%"></p>
+Overall more age, more accepting an offer, but customers who have no plan are more likely to accept an offer after 2years. (Age_Cat 1 : less than 1 year, 2 : between 1 and 2 year, 3: more than 3years)
+<p align="center"><img src="{{ site.baseurl }}/images/94.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/95.png" width="50%" height="50%"></p>
+Next, I checked outliers of data. From the boxplots below, outliers of Premium and Purchase_Price needs to remove.
+<p align="center"><img src="{{ site.baseurl }}/images/96.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/97.png" width="50%" height="50%"></p>
+I also found out the wrong values in Age column. So, it needs to be modified. Age = Cover_Start_Date - Purchase_Date.
+
+
+## Experiment - XGB, Logistic regression, LGBM, Random Forest, and MLP
+I tried experimenting with various conditions and algorithms. This is the outcome of the trials.
+As a final model, I chose the XGBoost. (red) Its accuracy is mostly the highest of all the models I tried, of course, but it also performs the best in terms of other metrics. However, we must exercise caution when evaluating the model's performance based just on accuracy. I believe that recall is a crucial component in this industry since it directly affects sales. The model's output comes first, and then marketing & pricing strategy, which in turn produces sales results. See the metrics like below.
+<p align="center"><img src="{{ site.baseurl }}/images/98.png" width="100%" height="50%"></p>
 
 
 
 
-
-
-
-
-
-. I removed null values and created the age variable that might be impactful feature. However, the bias of age is quite serious like below.
-<p align="center" width="100%"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/72.png" align="center" width="45%">
-<img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/73.png" align="center" width="45%"></p>
-Therefore, I removed the age under 0 and over 200. The preprocessed age feature distribution is like below.
-<p align="center"><img src="{{ site.baseurl }}/images/74.png" width="80%" height="50%"></p>
-Next, focus on the money variables! The bias is also heavy like the age.
-<p align="center"><img src="{{ site.baseurl }}/images/75.png" width="100%" height="100%"></p>
-It has to be normalised through log transformation.
-<p align="center"><img src="{{ site.baseurl }}/images/76.png" width="100%" height="100%"></p>
-Next, go through the locations! The location column has too many categories over 7500. I removed the categorical values that proportioned under 10%. In result, only 1000 locations left. After that, categorical columns like gender and location are converted to numerical values to apply K-means. I used the label encoder method. 
-Find out the correlations between varialbes!
-<p align="center"><img src="{{ site.baseurl }}/images/77.png" width="100%" height="100%"></p>
-I discovered a bit strong relationship between the age and money column that log transformed. Before applying K-means, I made all features standardised and left only 100000 raws. Lastly, I checkd the bias of all features like below.
-<p align="center"><img src="{{ site.baseurl }}/images/78.png" width="100%" height="100%"></p>
-All columns are mostly normalised except the previous categorical variables. I removed the money variables that is not log transformed.
-
-
-## K-means with features selection
+1) XGB
+2) Logistic regression
+3) LGBMRandom Forest, and MLP
 I tried optimal K from K-means using the preprocessed dataset that includes all features such as TransactionDate, CustomerAge, CustAccountBalance_log, TransactionAmount (INR)_log, Gender, and Location. I set the parameters for K-means like "init":"k-means++", "max_iter":300, "random_state":0. To figure out the optimal K, I used the elbow method and checked the silhouette values like below.
 <p align="center"><img src="{{ site.baseurl }}/images/79.png" width="100%" height="100%"></p>
 From this, I got the optial K is 5. I visualised the area of silhouette coefficients depending on the number of clusters as I want to make sure that it's reasonable.
