@@ -24,13 +24,16 @@ This dataset is 2000 raws, 15 columns, and all values are Non-null. So I don't n
 I found out the positive relation between Claims_Amount and  Claims_Count , weak positive relation between Premium and Price_Diff. 
 <p align="center"><img src="{{ site.baseurl }}/images/89.png" width="100%" height="100%"></p>
 In summsry, we can see the relations in the heatmap below.
-<p align="center"><img src="{{ site.baseurl }}/images/90.png" width=700 height=80></p>
 * Strong positive relation between Claims_Amount and  Claims_Count. 
 * Weak positive relation between Premium and  Price_Diff.  
 * Weak positive relation between Claims_Amount  and  Plan_Count,  Claims_Count  and  Plan_Count.
+<div style="line-height: 0.5;">
+<p align="center"><img src="{{ site.baseurl }}/images/90.png" width=600 height=70></p>
+</div>
 Next, I looked through the relations between each feature and target. 
 More claims customers have, more accepting an offer like below (left). (Claim_flag 1 : Claims they have, 0 : No claim.) Even though the premium decreased, there is no tendency to accept an offer. Even if the premium increases, they tend to accept an offer slightly more proportionally like below (right). (Price_Cat -1 : premium decrease, 0 : base premium, 1 : premium increase)
-<p align="center"><img src="{{ site.baseurl }}/images/91.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/92.png" width="50%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/91.png" style="margin-top: -10px; margin-bottom: -10px;" 
+ width="50%" height="50%"><img src="{{ site.baseurl }}/images/92.png" style="margin-top: -10px; margin-bottom: -10px;" width="50%" height="50%"></p>
 More plans they have, more accepting an offer!
 <p align="center"><img src="{{ site.baseurl }}/images/93.png" width="100%" height="50%"></p>
 Overall more age, more accepting an offer, but customers who have no plan are more likely to accept an offer after 2years. (Age_Cat 1 : less than 1 year, 2 : between 1 and 2 year, 3: more than 3years)
@@ -50,12 +53,15 @@ As a final model, I chose the XGBoost. (red) Its accuracy is mostly the highest 
 <br>
 ## Feture importance
 To investigate the importance of features, I utilised the shap and the XGB plot_importance. Plan_flag, Plan_Count, Age_Cat, and Claims_Count are contributed in aspect of the shap. Price_Diff, Purchase_Price, Premium, and SP_CA are contributed more than other features based on XGB plot_importance.
-<p align="center"><img src="{{ site.baseurl }}/images/99.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/100.png" width="50%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/99.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/100.png" width="100%" height="50%"></p>
 
 
 
+## Experiment with the change in premium price
+In this part, I experimented the change in the demand probability depending on the change in premium increasing from 1% to 10.5%.
 
-## K-means with Encoder method
+
 From the PCA, it needed more exact features extraction. The idea of this method is to use the encoder part of Autoencoder method. From the encoder, I got 2 main features. I utilised 2 hidden layers each size 4 and 2.
 
 The parameters for K-means like "init":"k-means++", "max_iter":300, "random_state":0
