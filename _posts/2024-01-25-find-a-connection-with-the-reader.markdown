@@ -24,7 +24,7 @@ This dataset is 2000 raws, 15 columns, and all values are Non-null. So I don't n
 I found out the positive relation between Claims_Amount and  Claims_Count , weak positive relation between Premium and Price_Diff. 
 <p align="center"><img src="{{ site.baseurl }}/images/89.png" width="100%" height="100%"></p>
 In summsry, we can see the relations in the heatmap below.
-<p align="center"><img src="{{ site.baseurl }}/images/90.png" width=500 height=80></p>
+<p align="center"><img src="{{ site.baseurl }}/images/90.png" width=700 height=80></p>
 * Strong positive relation between Claims_Amount and  Claims_Count. 
 * Weak positive relation between Premium and  Price_Diff.  
 * Weak positive relation between Claims_Amount  and  Plan_Count,  Claims_Count  and  Plan_Count.
@@ -40,14 +40,14 @@ Next, I checked outliers of data. From the boxplots below, outliers of Premium a
 I also found out the wrong values in Age column. So, it needs to be modified. Age = Cover_Start_Date - Purchase_Date.
 
 
-
+<br><br>
 ## Experiment - XGB, Logistic regression, LGBM, Random Forest, and MLP
 I tried experimenting with various conditions and algorithms. This is the outcome of the trials.
 As a final model, I chose the XGBoost. (red) Its accuracy is mostly the highest of all the models I tried, of course, but it also performs the best in terms of other metrics. However, we must exercise caution when evaluating the model's performance based just on accuracy. I believe that recall is a crucial component in this industry since it directly affects sales. The model's output comes first, and then marketing & pricing strategy, which in turn produces sales results. See the metrics like below.
 <p align="center"><img src="{{ site.baseurl }}/images/98.png" width="100%" height="100%"></p>
 
 
-
+<br>
 ## Feture importance
 To investigate the importance of features, I utilised the shap and the XGB plot_importance. Plan_flag, Plan_Count, Age_Cat, and Claims_Count are contributed in aspect of the shap. Price_Diff, Purchase_Price, Premium, and SP_CA are contributed more than other features based on XGB plot_importance.
 <p align="center"><img src="{{ site.baseurl }}/images/99.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/100.png" width="50%" height="50%"></p>
