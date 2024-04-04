@@ -5,22 +5,19 @@ date: 2024-01-25 10:01:35 +0300
 image:  8.jpeg
 tags:   
 ---
-This project is the bank customers segmentation using __k-means.__ This dataset can be downloaded <a href="[https://www.kaggle.com/datasets/tanishaj225/loancsv/code?datasetId=1198164](https://www.kaggle.com/datasets/shivamb/bank-customer-segmentation/data)">here</a>.
+This project is about building the insurance premium pricing model utilising XGBoost, Logistic regression, LGBM, Rnadom Forest, and MLP. 
 
-The goal of this project is finding out the importance of features extraction for calssification problem. The project will be consist of 4 parts:
+The goal of this project is finding out the optimal premium price for the customers. I also investigated which features are important for the final model and the relationship between the price elasticity and the change in the price. The project will be consist of 4 parts:
 * EDA - Data preprocessing 
-* Method explanation
-  
-  (1) K-means with features selection
-  
-  (2) K-means with PCA
-  
-  (3) K-means with features extraction from Encoder
+* Price Elasticity
+* Experiment - XGB, Logistic regression, LGBM, Random Forest, and MLP
+* Feture importance
+* Experiment with the change in premium price
 * Conclusion
 
 
-## EDA - Data preprocessing 
-![]({{ site.baseurl }}/images/71.png)
+## EDA & Data preprocessing 
+![]({{ site.baseurl }}/images/88.png)
 *Data Structure*
 This dataset is quite huge over 1000000 raws. I removed null values and created the age variable that might be impactful feature. However, the bias of age is quite serious like below.
 <p align="center" width="100%"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/72.png" align="center" width="45%">
