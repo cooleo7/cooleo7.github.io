@@ -15,6 +15,7 @@ The goal of this project is finding out the optimal premium price for the custom
 * Conclusion
 
 
+
 ## EDA & Data preprocessing 
 <!--![]({{ site.baseurl }}/images/88.png)-->
 <p align="center"><img src="{{ site.baseurl }}/images/88.png" width="500" height="80"></p>
@@ -39,10 +40,12 @@ Next, I checked outliers of data. From the boxplots below, outliers of Premium a
 I also found out the wrong values in Age column. So, it needs to be modified. Age = Cover_Start_Date - Purchase_Date.
 
 
+
 ## Experiment - XGB, Logistic regression, LGBM, Random Forest, and MLP
 I tried experimenting with various conditions and algorithms. This is the outcome of the trials.
 As a final model, I chose the XGBoost. (red) Its accuracy is mostly the highest of all the models I tried, of course, but it also performs the best in terms of other metrics. However, we must exercise caution when evaluating the model's performance based just on accuracy. I believe that recall is a crucial component in this industry since it directly affects sales. The model's output comes first, and then marketing & pricing strategy, which in turn produces sales results. See the metrics like below.
 <p align="center"><img src="{{ site.baseurl }}/images/98.png" width="100%" height="100%"></p>
+
 
 
 ## Feture importance
