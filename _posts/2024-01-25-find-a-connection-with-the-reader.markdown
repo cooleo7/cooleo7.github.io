@@ -24,7 +24,7 @@ This dataset is 2000 raws, 15 columns, and all values are Non-null. So I don't n
 I found out the positive relation between Claims_Amount and  Claims_Count , weak positive relation between Premium and Price_Diff. 
 <p align="center"><img src="{{ site.baseurl }}/images/89.png" width="100%" height="100%"></p>
 In summsry, we can see the relations in the heatmap below.
-<p align="center"><img src="{{ site.baseurl }}/images/90.png" width="100%" height="100%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/90.png" width="100%" height="50%"></p>
 * Strong positive relation between Claims_Amount and  Claims_Count. 
 * Weak positive relation between Premium and  Price_Diff.  
 * Weak positive relation between Claims_Amount  and  Plan_Count,  Claims_Count  and  Plan_Count.
