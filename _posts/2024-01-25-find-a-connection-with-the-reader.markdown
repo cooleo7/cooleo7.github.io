@@ -15,7 +15,7 @@ The goal of this project is finding out the optimal premium price for the custom
 * Conclusion
 
 
-
+<br><br>
 ## EDA & Data preprocessing 
 <!--![]({{ site.baseurl }}/images/88.png)-->
 <p align="center"><img src="{{ site.baseurl }}/images/88.png" width="500" height="80"></p>
