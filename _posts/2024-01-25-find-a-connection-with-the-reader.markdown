@@ -42,32 +42,12 @@ I also found out the wrong values in Age column. So, it needs to be modified. Ag
 ## Experiment - XGB, Logistic regression, LGBM, Random Forest, and MLP
 I tried experimenting with various conditions and algorithms. This is the outcome of the trials.
 As a final model, I chose the XGBoost. (red) Its accuracy is mostly the highest of all the models I tried, of course, but it also performs the best in terms of other metrics. However, we must exercise caution when evaluating the model's performance based just on accuracy. I believe that recall is a crucial component in this industry since it directly affects sales. The model's output comes first, and then marketing & pricing strategy, which in turn produces sales results. See the metrics like below.
-<p align="center"><img src="{{ site.baseurl }}/images/98.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/99.png" width="50%" height="50%"><img src="{{ site.baseurl }}/images/100.png" width="50%" height="50%"></p>
 
 
-
-
-1) XGB
-2) Logistic regression
-3) LGBMRandom Forest, and MLP
-I tried optimal K from K-means using the preprocessed dataset that includes all features such as TransactionDate, CustomerAge, CustAccountBalance_log, TransactionAmount (INR)_log, Gender, and Location. I set the parameters for K-means like "init":"k-means++", "max_iter":300, "random_state":0. To figure out the optimal K, I used the elbow method and checked the silhouette values like below.
-<p align="center"><img src="{{ site.baseurl }}/images/79.png" width="100%" height="100%"></p>
-From this, I got the optial K is 5. I visualised the area of silhouette coefficients depending on the number of clusters as I want to make sure that it's reasonable.
-<p align="center"><img src="{{ site.baseurl }}/images/80.png" width="100%" height="100%"></p>
-Even though the silhouette coefficients at K=4 is the biggest, the area of the silhouette coefficient in each cluster is mostly equal based on the average of silhouette score at K=5. 
-
-From the correlation analysis, I found out a bit strong relationship between age and CustAccountBalance_log. Therefore, I visualised the clusters using 2 main features age and CustAccountBalance_log like the below. But it didn't look clearly classified.
-<p align="center"><img src="{{ site.baseurl }}/images/81.png" width="100%" height="100%"></p>
-
-
-## K-means with PCA
-From the first experiment, I concluded it needed feature extraction. Based on the correlation analysis, I set the number of the main features to 3. I utilised PCA as features extraction. I tried optimal K from K-means using the preprocessed dataset that includes 3 principal features from PCA. 
-
-The parameters for K-means like "init":"k-means++", "max_iter":300, "random_state":0
+## Feture importance
+To investigate the importance of features, I utilised the shap and the XGB plot_importance. Plan_flag, Plan_Count, Age_Cat, and Claims_Count are contributed in aspect of the shap. Price_Diff, Purchase_Price, Premium, and SP_CA are contributed more than other features based on XGB plot_importance.
 <p align="center"><img src="{{ site.baseurl }}/images/82.png" width="100%" height="100%"></p>
-<p align="center"><img src="{{ site.baseurl }}/images/83.png" width="100%" height="100%"></p>
-I visualised the clusters using 2 principal features from PCA like below. It looked more clear than the first experiment, but it was not still celarly classified.
-<p align="center"><img src="{{ site.baseurl }}/images/84.png" width="100%" height="100%"></p>
 
 
 ## K-means with Encoder method
