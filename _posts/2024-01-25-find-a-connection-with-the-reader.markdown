@@ -23,7 +23,7 @@ The goal of this project is finding out the optimal premium price for the custom
 <br>
 This dataset is 2000 raws, 15 columns, and all values are Non-null. So I don't need to do null values preprocessing. Overall, I looked through the relations between all nemerical variables.
 I found out the positive relation between Claims_Amount and  Claims_Count , weak positive relation between Premium and Price_Diff. 
-<p align="center"><img src="{{ site.baseurl }}/images/89.png" width="100%" height=200></p>
+<p align="center"><img src="{{ site.baseurl }}/images/89.png" width="700" height="1000"></p>
 In summsry, we can see the relations in the heatmap below.
 * Strong positive relation between Claims_Amount and  Claims_Count. 
 * Weak positive relation between Premium and  Price_Diff.  
