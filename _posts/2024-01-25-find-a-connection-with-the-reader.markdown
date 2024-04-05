@@ -33,7 +33,7 @@ In summsry, we can see the relations in the heatmap below.
 Next, I looked through the relations between each feature and target. 
 More claims customers have, more accepting an offer like below (left). (Claim_flag 1 : Claims they have, 0 : No claim.) Even though the premium decreased, there is no tendency to accept an offer. Even if the premium increases, they tend to accept an offer slightly more proportionally like below (right). (Price_Cat -1 : premium decrease, 0 : base premium, 1 : premium increase)
 <p align="center"><img src="{{ site.baseurl }}/images/91.png" style="margin-top: -20px; margin-bottom: -15px;" 
- width="50%" height="50%"><img src="{{ site.baseurl }}/images/92.png" style="margin-top: -20px; margin-bottom: -15px;" width="55%" height="55%"></p>
+ width="400" height="70"><img src="{{ site.baseurl }}/images/92.png" style="margin-top: -20px; margin-bottom: -15px;" width="400" height="70"></p>
 More plans they have, more accepting an offer!
 <p align="center"><img src="{{ site.baseurl }}/images/93.png" style="margin-top: -20px; margin-bottom: -20px;" width="100%" height="50%"></p>
 Overall more age, more accepting an offer, but customers who have no plan are more likely to accept an offer after 2years. (Age_Cat 1 : less than 1 year, 2 : between 1 and 2 year, 3: more than 3years)
