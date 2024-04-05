@@ -53,14 +53,14 @@ As a final model, I chose the XGBoost. (red) Its accuracy is mostly the highest 
 <br><br>
 ## Feture importance
 To investigate the importance of features, I utilised the shap and the XGB plot_importance. Plan_flag, Plan_Count, Age_Cat, and Claims_Count are contributed in aspect of the shap. Price_Diff, Purchase_Price, Premium, and SP_CA are contributed more than other features based on XGB plot_importance.
-<p align="center"><img src="{{ site.baseurl }}/images/99.png" style="margin-top: -20px; margin-bottom: -10px;" width="0%" height="30%"></p>
-<p align="center"><img src="{{ site.baseurl }}/images/100.png" style="margin-top: -10px;" width="85%" height="20%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/99.png" style="margin-top: -20px; margin-bottom: -10px;" width="700" height="80"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/100.png" style="margin-top: -10px;" width="500" height="60"></p>
 
 
 <br>
 ## Experiment with the change in premium price
 In this part, I experimented with the change in demand probability depending on the increase in premium from 1% to 10.5%. I also examined the change in recall according to the change in premium in the meantime, as recall is an important factor in this model, as I explained above. Surprisingly, the demand probability is higher when the price increases compared to the flat price. The ratio of increase is between 1% and 2.5%, and between 6% and 8.5%. The recall is also higher than the flat price, indicating its original price in some parts of the increased premium. Furthermore, we can observe that the higher the price increases, the greater the price elasticity. See the detailed charts below.
-<p align="center"><img src="{{ site.baseurl }}/images/101.png" style="margin-top: -10px;" width=700height="80"><img src="{{ site.baseurl }}/images/102.png" style="margin-top: -10px;" width="50%" height="50%"><img src="{{ site.baseurl }}/images/103.png" style="margin-top: -20px;" width=600 height=70></p>
+<p align="center"><img src="{{ site.baseurl }}/images/101.png" style="margin-top: -10px;" width="50%" height="50%"><img src="{{ site.baseurl }}/images/102.png" style="margin-top: -10px;" width="50%" height="50%"><img src="{{ site.baseurl }}/images/103.png" style="margin-top: -20px;" width="50%" height="50%"></p>
 
 
 <br><br>
