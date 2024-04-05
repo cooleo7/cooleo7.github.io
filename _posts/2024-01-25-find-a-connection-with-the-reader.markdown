@@ -54,7 +54,7 @@ As a final model, I chose the XGBoost. (red) Its accuracy is mostly the highest 
 ## Feture importance
 To investigate the importance of features, I utilised the shap and the XGB plot_importance. Plan_flag, Plan_Count, Age_Cat, and Claims_Count are contributed in aspect of the shap. Price_Diff, Purchase_Price, Premium, and SP_CA are contributed more than other features based on XGB plot_importance.
 <p align="center"><img src="{{ site.baseurl }}/images/99.png" style="margin-top: -20px; margin-bottom: -10px;" width="700" height="80"></p>
-<p align="center"><img src="{{ site.baseurl }}/images/100.png" style="margin-top: -10px;" width="500" height="60"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/100.png" style="margin-top: -10px;" width="700" height="60"></p>
 
 
 <br>
