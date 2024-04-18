@@ -63,7 +63,7 @@ walk2 - acc_y_right, acc_z_left negative correlation (-0.32, -0.3), gyr_z_left p
 var1 - gyr_y_right negative correlation (-0.25), gyr_z_left positive correlation (0.56)
 
 var2 - acc_z_left negative correlation (-0.16), gyr_z_left positive correlation (0.64)
-<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/41.png" width="100%" height="50%" style="margin-top: -10px;"></p>
+<p align="center"><img style="margin:0px 0 0px 0" src="{{ site.baseurl }}/images/41.png" width="100%" height="50%"></p>
 
 
 ## Data Ingestion
