@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  The prediction of the gait phase at time t from the motion sensor data
-date:   2018-07-05 15:01:35 +0300
+date:   2022-07-05 15:01:35 +0300
 image:  05.avif
 tags:   
 ---
