@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Text analysis Part1)News Classification, Part2)Sentiment Analysis
+title:  Text analysis Part1) News Classification, Part2) Sentiment Analysis
 date:   2023-01-26 15:01:35 +0300
 image:  06.webp
 tags:   
@@ -8,7 +8,7 @@ tags:
 <!--https://heung-bae-lee.github.io/2020/02/01/NLP_05/-->
 This project diveides two parts of text analysis. One is a news classification with Reuters news dataset and the other is a sentiment analysis based on movie rating data from the Internet Movie Database (IMDB).
 
-<br><br>
+<br>
 ## Part1) News Classification utilising various algorithms including ML, Ensemble, and DL
 
 First of all, let me explain about the news classification problem. News is devided into 20 categories such as science, computer, recreation, and politics etc. The goal of this project is to figure out which algorithm is the most effective among 8 kinds of algorithms.
@@ -17,7 +17,7 @@ The project will be consist of 3 parts:
 * Experiment
 * Conclusion
 
-
+<br>
 ## EDA & Embedding
 I split the news data into 11314 rows with train data and 7532 rows with test data. I tried out the distribution of the length of each news. It shows that the length of news mostly just under 10000. See the chart below.
 <p align="center"><img src="{{ site.baseurl }}/images/105.png" width="80%" height="50%"></p>
@@ -25,7 +25,7 @@ It is also important for the distibution of label data to predict the category f
 <p align="center"><img src="{{ site.baseurl }}/images/106.png" width="80%" height="50%"></p>
 The dataset is already vectorised, however, I preprocessed the data with counter verctoriser and the <a href="https://www.kdnuggets.com/2022/09/convert-text-documents-tfidf-matrix-tfidfvectorizer.html#:~:text=Term%20frequency%20Inverse%20document%20frequency,relevant%20words%20in%20the%20document.">TF-IDF methods.</a>
 
-<br><br>
+<br>
 ## Experiment
 I experimented 8 kinds of algorithms such as Multinomial Naive Baysian, Complement Naive Baysian, Logistic Regression, Linear SVC, Decision Tree, Gradient Boosting, Voting Classifier (Logistic Regression + Complement Naive Baysian + Gradient Boosting), and LSTM. The table below is the accuracy of the each algorithm.
 <p align="center"><img src="{{ site.baseurl }}/images/107.png" width="100%" height="80%"></p>
@@ -49,7 +49,7 @@ The project will be consist of 5 parts:
 * Modelling #3 (CNN)
 * Conclusion
 
-
+<br>
 ## EDA
 Here is dataset structure like below.
 <p align="center"><img src="{{ site.baseurl }}/images/56.png" width="80%" height="50%" style="margin-top: -5px;"></p>
