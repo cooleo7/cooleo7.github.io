@@ -17,7 +17,10 @@ The project will be consist of 3 parts:
 
 ## EDA & Embedding
 I split the news data into 11314 rows with train data and 7532 rows with test data. I tried out the distribution of the length of each news. It shows that the length of news mostly just under 10000. See the chart below.
-<p align="center"><img src="{{ site.baseurl }}/images/56.png" width="80%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/105.png" width="80%" height="50%"></p>
+It is also important for the distibution of label data to predict the category for news if it's imbalance or not. So the chart below displays the balance of the label data. It shows that most categories are balanced.
+<p align="center"><img src="{{ site.baseurl }}/images/106.png" width="80%" height="50%"></p>
+
 
 
 This is a text classification using movie rating data from the Internet Movie Database (IMDB). It will predict sentiment (positive or negative) after checking the reviews. 
