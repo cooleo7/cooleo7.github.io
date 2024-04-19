@@ -51,22 +51,22 @@ The project will be consist of 5 parts:
 <br><br>
 ## EDA
 Here is dataset structure like below.
-<p align="center"><img src="{{ site.baseurl }}/images/56.png" width="80%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/56.png" width="80%" height="50%" style="margin-top: -5px;"></p>
 At first, I checked the distribution of the length of review! The length of the reviews are mostly 100 and 6000. I also checked the outliers of the length in reviews. See the image the below.
-<p align="center"><img src="{{ site.baseurl }}/images/51.png" width="100%" height="70%"></p>
-<p align="center"><img src="{{ site.baseurl }}/images/52.png" width="100%" height="70%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/51.png" width="100%" height="70%" style="margin-top: -20px;"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/52.png" width="100%" height="70%" style="margin-top: -20px; margin-bottom: -5px;"></p>
 We can check the distribution of the frequent of words in reviews using wordcloud. Refer to the image below.
-<p align="center"><img src="{{ site.baseurl }}/images/53.png" width="100%" height="800%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/53.png" width="100%" height="800%" style="margin-top: -20px; margin-bottom: -10px;"></p>
 We can see "br" is quite frequent in review. We can guess it includs html, so I will remove the html during data preprocessing.
 I also have to check the distribution of labels so that we can get the result of training without a bias.
 The distribution of sentiment is equally divided so that '1'(positive) is 12500 and '0'(negatibe) is 12500.
 Refer to the image below.
-<p align="center"><img src="{{ site.baseurl }}/images/54.png" width="80%" height="60%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/54.png" width="80%" height="60%" style="margin-top: -20px;"></p>
 In the next step, I want to see the frequency of word counts, as it needs to be same length in input matrix for the training.
 We can see the data mostly has between 200 and 1000 words in average like below.
-<p align="center"><img src="{{ site.baseurl }}/images/55.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/55.png" width="100%" height="50%" style="margin-top: -20px; margin-bottom: -5px;"></p>
 To cleanse the data, I checked the special letters, numbers, and the proportion of uppercase.
-<p align="center"><img src="{{ site.baseurl }}/images/57.png" width="70%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/57.png" width="70%" height="50%" style="margin-top: -5px;"></p>
 
 <br><br>
 ## Data Preprocessing
@@ -76,13 +76,13 @@ To cleanse the data, I checked the special letters, numbers, and the proportion 
 4. remove stopwords
 
 From the preprocessing, we can compare the data before preprocessing and after. Refer to below the images.
-<p align="center"><img src="{{ site.baseurl }}/images/58.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/58.png" width="100%" height="50%" style="margin-top: -10px; margin-bottom: -20px;"></p>
 *before preprocessing*
-<p align="center"><img src="{{ site.baseurl }}/images/59.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/59.png" width="100%" height="50%" style="margin-top: -20px; margin-bottom: -20px;"></p>
 *after preprocessing*
 
 To train the data, we have to convert the text to a matrix. (vectorisation) Currently, each data has a different length, but the length must be unified to be able to apply it to future models. So a specific length is set as the maximum length and for longer data, it has to be truncated the latter part and, in case of short data, it has to be padded with a 0 value. For padding processing, I used the pad_sequences function. When using this function, you can specify as arguments the data to apply padding to, the maximum length value, and whether to put the 0 value before or after the data. Also, note that words are counted starting from the last word. Here, the maximum length was set to 174, which was calculated when statistics on the number of words were calculated during the data analysis process. This is the median value. Usually, the median is used instead of the average, because the average is sensitive to outliers. After vectoriation, data structure is like below.
-<p align="center"><img src="{{ site.baseurl }}/images/60.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/60.png" width="100%" height="50%" style="margin-top: -5px; margin-bottom: -5px;"></p>
 One important point when preprocessing evaluation data is that when creating an index vector through Tokenizer, the Tokenizer object previously applied to the learning data must be used. If you create a new one, the index of each word for the training data and evaluation data will be different.
 This is because it cannot be applied properly to the model. If a word that is not included in the train data exists in the test data, the probability must be set to 0.
 
@@ -91,8 +91,8 @@ This is because it cannot be applied properly to the model. If a word that is no
 To apply logistic regression algoritm, I vectorised the input data with TF-IDF method. What is TF-IDF?
 It is the product of TF and IDF. It gives a weight to each term in a document, emphasizing terms that are important to that document but not common across the entire corpus.
 TF-IDF(t,d,D)=TF(t,d)×IDF(t,D)
-<p align="center"><img src="{{ site.baseurl }}/images/61.png" width="80%" height="50%"></p>
-<p align="center"><img src="{{ site.baseurl }}/images/62.png" width="80%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/61.png" width="80%" height="50%" style="margin-top: -5px; margin-bottom: -5px;"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/62.png" width="80%" height="50%" style="margin-top: -5px; margin-bottom: -5px;"></p>
 In summary, TF-IDF is used to quantify the importance of a term within a specific document in the context of a larger corpus.
 From logistic regression with TF-IDF, I got the accuracy of the model as __85%.__
 
@@ -106,8 +106,8 @@ Interestingly, I got the lower accuracy from VADER compared to logistic regressi
 <br>
 ## Modelling #3 (CNN)
 In this model, I vectorised the input data with a GLoVE embedding method. GloVe is designed to capture semantic similarities between words and learns word vectors based on statistical information obtained from corpora. Therefore, GloVe word embeddings reflect a variety of linguistic characteristics, including semantic similarity between words, relationships between words, and use of words in context. I experimented GLoVE embedding size 50 and 100 each. I utilised the CNN which has 100 filters using the window size 2,3,4, and 5. Here is the plot of the accuracy and loss having a GLoVE embedding size 50 and 100 each. I got the accuracy __87.7%__ from GLoVE embedding size 50 and __88.4%__ from GLoVE embedding size 100.
-<p align="center"><img src="{{ site.baseurl }}/images/69.png" width="100%" height="50%"></p>
-<p align="center"><img src="{{ site.baseurl }}/images/70.png" width="100%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/69.png" width="100%" height="50%" style="margin-top: -20px; margin-bottom: -5px;"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/70.png" width="100%" height="50%" style="margin-top: -20px;"></p>
 
 
 ## Conclusion
