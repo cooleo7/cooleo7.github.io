@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Text analysis with Logistic regression, VADER, and CNN
-date:   2018-06-25 15:01:35 +0300
+date:   2024-01-26 15:01:35 +0300
 image:  06.webp
 tags:   
 ---
