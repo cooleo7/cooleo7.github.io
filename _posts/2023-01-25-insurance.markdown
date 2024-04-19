@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Insurance pricing utilising XGBoost, Logistic Regression, LGBM, Random Forest, and MLP
-date: 2024-01-25 10:01:35 +0300
+date: 2023-01-25 10:01:35 +0300
 image:  8.jpeg
 tags:   
 ---
