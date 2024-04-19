@@ -6,6 +6,20 @@ image:  06.webp
 tags:   
 ---
 <!--https://heung-bae-lee.github.io/2020/02/01/NLP_05/-->
+This project diveides two parts of text analysis. One is a news classification with Reuters news dataset and the other is a sentiment analysis based on movie rating data from the Internet Movie Database (IMDB).
+
+First of all, let me explain about the news classification problem. News is devided into 20 categories such as science, computer, recreation, and politics etc. The goal of this project is to figure out which algorithm is the most effective among 8 kinds of algorithms.
+The project will be consist of 3 parts:
+* EDA & Embedding
+* Experiment
+* Conclusion
+
+
+## EDA & Embedding
+I split the news data into 11314 rows with train data and 7532 rows with test data. I tried out the distribution of the length of each news. It shows that the length of news mostly just under 10000. See the chart below.
+<p align="center"><img src="{{ site.baseurl }}/images/56.png" width="80%" height="50%"></p>
+
+
 This is a text classification using movie rating data from the Internet Movie Database (IMDB). It will predict sentiment (positive or negative) after checking the reviews. 
 The project will be consist of 5 parts:
 * EDA
