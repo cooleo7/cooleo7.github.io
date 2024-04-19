@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Bank customers segmentation using K-means depediong on features, meanshift,GMM, and RFM
-date: 2022-01-25 10:01:35 +0300
+date: 2022-12-25 10:01:35 +0300
 image:  07.jpg
 tags:   
 ---
