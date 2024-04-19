@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Recommender system based on self-attention mechanism"
-date:   2022-12-30 18:05:55 +0300
+date:   2022-01-05 18:05:55 +0300
 image:  10.png
 tags:   
 ---
