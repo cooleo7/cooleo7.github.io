@@ -20,6 +20,20 @@ I split the news data into 11314 rows with train data and 7532 rows with test da
 <p align="center"><img src="{{ site.baseurl }}/images/105.png" width="80%" height="50%"></p>
 It is also important for the distibution of label data to predict the category for news if it's imbalance or not. So the chart below displays the balance of the label data. It shows that most categories are balanced.
 <p align="center"><img src="{{ site.baseurl }}/images/106.png" width="80%" height="50%"></p>
+The dataset is already vectorised, however, I preprocessed the data with counter verctoriser and the <a href="https://www.kdnuggets.com/2022/09/convert-text-documents-tfidf-matrix-tfidfvectorizer.html#:~:text=Term%20frequency%20Inverse%20document%20frequency,relevant%20words%20in%20the%20document.">TF-IDF methods.</a>
+
+
+## Experiment
+I experimented 8 kinds of algorithms such as Multinomial Naive Baysian, Complement Naive Baysian, Logistic Regression, Linear SVC, Decision Tree, Gradient Boosting, Voting Classifier (Logistic Regression + Complement Naive Baysian + Gradient Boosting), and LSTM. The table below is the accuracy of the each algorithm.
+<p align="center"><img src="{{ site.baseurl }}/images/107.png" width="80%" height="50%"></p>
+I drew out the heatmap which shows the counts of the news that correctly classified. Interestingly, in the case of the complement naive baysian, the proportion of the correctly classified news is lower in the religion category, even though the accuracy of this model was the highest.
+However, in the voting model, the proportion of the correctly classified news is balanced in all categories of news. See the heatmap below.
+<p align="center"><img src="{{ site.baseurl }}/images/108.png" width="50%" height="50%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/109.png" width="50%" height="50%"></p>
+To understand the effect of each algorithm, I drew out the graph which shows the score-traing time-trade off and the score-test time-trade off. You can see which algorithm outperformed.
+<p align="center"><img src="{{ site.baseurl }}/images/110.png" width="100%" height="100%"></p>
+<p align="center"><img src="{{ site.baseurl }}/images/111.png" width="100%" height="100%"></p>
+
 
 
 
