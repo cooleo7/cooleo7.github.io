@@ -2,7 +2,7 @@
 layout: post
 title:  Energy data analysis by countries worldwide
 date: 2022-12-20 15:01:35 +0300
-image:  02.png
+image:  112.jpg
 tags:   
 ---
 We can identify which customers are likely to leave the bank through various ML & DL methods. It is crucial that banks conduct more thorough data analysis. The purpose of this project is to learn something new through careful data analysis such as __Binomial Logistic Regression.__
