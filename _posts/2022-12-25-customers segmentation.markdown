@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  Bank customers segmentation using K-means depediong on features, meanshift,GMM, and RFM
+title:  Bank customers segmentation using K-means depending on features
 date: 2023-01-07 10:01:35 +0300
 image:  07.jpg
 tags:   
 ---
 This project is the bank customers segmentation using __k-means.__ This dataset can be downloaded <a href="[https://www.kaggle.com/datasets/tanishaj225/loancsv/code?datasetId=1198164](https://www.kaggle.com/datasets/shivamb/bank-customer-segmentation/data)">here</a>.
 
-The goal of this project is finding out the importance of features extraction for calssification problem. The project will be consist of 4 parts:
+The goal of this project is finding out the importance of features extraction for calssification problem. The project will be consist of 3 parts:
 * EDA - Data preprocessing 
 * Method explanation
   
