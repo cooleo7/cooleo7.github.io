@@ -2,7 +2,7 @@
 layout: post
 title:  Customer Churn Analysis using Tableau
 date:   2024-08-01 15:01:35 +0300
-image:  06.webp
+image:  114.webp
 tags:   
 ---
 <!--https://heung-bae-lee.github.io/2020/02/01/NLP_05/-->
