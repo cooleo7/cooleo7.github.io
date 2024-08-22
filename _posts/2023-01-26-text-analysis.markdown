@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Text analysis Part1) News Classification, Part2) Sentiment Analysis
-date:   2023-01-26 15:01:35 +0300
+date:   2022-12-24 15:01:35 +0300
 image:  06.webp
 tags:   
 ---
