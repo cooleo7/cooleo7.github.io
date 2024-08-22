@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Energy data analysis by country worldwide using Tableau
-date: 2022-12-20 15:01:35 +0300
+date: 2022-12-25 15:01:35 +0300
 image:  112.jpg
 tags:   
 ---
