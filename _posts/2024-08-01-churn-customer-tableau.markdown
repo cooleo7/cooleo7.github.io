@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Customer Churn Rate Simulation using Tableau
+title:  Customer churn rate simulation using Tableau
 date:   2024-08-01 15:01:35 +0300
 image:  114.webp
 tags:   
