@@ -31,7 +31,7 @@ as we can see from the heatmap, there are clear relationships between the factor
 In the final page, 
 I experimented with the change in churn rate by altering major factors such as tenure, monthly charge, and contract type. You can change the tenure with a slide bar and the monthly charge using a select box. The more tenure months I add, the lower the churn rate becomes. The more monthly discount customers have, the lower the churn rate. When I change the contract type from month-to-month to a yearly contract, the churn rate decreases from 43.9% to 26.6%.
 
-## In conclusion, I suggest targeting customers with month-to-month contracts and offering them a monthly discount to switch to a yearly contract. This would help retain them longer and ideally reduce the churn rate to 0%.
+In conclusion, I suggest targeting customers with month-to-month contracts and offering them a monthly discount to switch to a yearly contract. This would help retain them longer and ideally reduce the churn rate to 0%.
 Take a look at the story dashboard using Tableau!
 
 <br><br>
