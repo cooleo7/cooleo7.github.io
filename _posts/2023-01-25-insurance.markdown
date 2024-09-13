@@ -66,7 +66,7 @@ In this part, I experimented with the change in demand probability depending on 
 
 <br><br>
 ## Conclusion
-As the price increases, it implies that there is a significant fluctuation in the quantity demanded in response to price changes. When the price elasticity approaches zero from negative values as the price increases, it indicates that the demand is relatively sensitive to price changes. When the price rises and the price elasticity approaches zero, it means that the demand decreases proportionally as the price increases. In conclusion, interpreting the graphs of accuracy, recall, and price elasticity, it can be seen that raising the price by 2% would be the most appropriate choice!
+As the price increases, it implies that there is a significant fluctuation in the quantity demanded in response to price changes. When the price elasticity approaches zero from negative values as the price increases, it indicates that the demand is relatively sensitive to price changes. When the price rises and the price elasticity approaches zero, it means that the demand decreases proportionally as the price increases. In conclusion, interpreting the graphs of accuracy, recall, and price elasticity, it can be seen that raising the price by 6.5% would be the most appropriate choice!
 
 
 
